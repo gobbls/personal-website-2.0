@@ -3,7 +3,7 @@ const props = defineProps({
     links: Object,
 });
 
-function icon(key) {
+const icon = (key) => {
     const icons = {
         visit: "icons/arrow.png",
         download: "icons/download.png",
