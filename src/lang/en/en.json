@@ -1,0 +1,20 @@
+{
+    "language": "English",
+    "navigation": {
+        "home": "Home",
+        "projects": "Projects",
+        "blog": "Blog",
+        "contact": "Contact"
+    },
+    "page": {
+        "home": {},
+        "projects": {
+            "project": {
+                "AKSOSPM": "work",
+                "Firefox-bookmark-scraper": "personal",
+                "Rock-paper-scissors": "exercise"
+            }
+        },
+        "blog": {}
+    }
+}

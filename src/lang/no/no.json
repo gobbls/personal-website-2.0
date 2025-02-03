@@ -1,0 +1,20 @@
+{
+    "language": "Norsk",
+    "navigation": {
+        "home": "Hjem",
+        "projects": "Prosjekter",
+        "blog": "Blog",
+        "contact": "Kontakt"
+    },
+    "page": {
+        "home": {},
+        "projects": {
+            "project": {
+                "AKSOSPM": "jobb",
+                "Firefox-bookmark-scraper": "personlig",
+                "Rock-paper-scissors": "øvelse"
+            }
+        },
+        "blog": {}
+    }
+}
