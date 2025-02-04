@@ -1,8 +1,16 @@
+@font-face {
+    font-family: "Nunito";
+    src: url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap') format("truetype");
+}
+
 :root {
     --base: black;
     --text: white;
     --nav-link: blue;
     --link-text: #04a5e5;
+
+    --hover-on-phase: 0.2s;
+    --hover-off-phase: 0.4s;
 }
 
 body {
@@ -16,10 +24,11 @@ body {
     transition: color 0.5s, background-color 0.5s;
     /*
     line-height: 1.6;
-    */
     font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
         sans-serif;
+    */
+    font-family: "Nunito";
 }
 
 a {

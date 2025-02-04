@@ -9,10 +9,20 @@
     "page": {
         "home": {},
         "projects": {
+            "madeFor": "Made for:",
             "project": {
-                "AKSOSPM": "work",
-                "Firefox-bookmark-scraper": "personal",
-                "Rock-paper-scissors": "exercise"
+                "AKSOSPM": {
+                    "type": "work",
+                    "madeFor": "Linux, MacOS, Windows"
+                },
+                "Firefox Bookmark Scraper": {
+                    "type": "personal",
+                    "madeFor": "Linux, MacOS, Windows"
+                },
+                "Rock Paper Scissors": {
+                    "type": "exercise",
+                    "madeFor": "Browser"
+                }
             }
         },
         "blog": {}

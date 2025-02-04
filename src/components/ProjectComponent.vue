@@ -24,22 +24,19 @@ const placeholder = 'No props passed yet'
 
 
 <template>
-    <div class="project-wrapper">
+    <div class="project-card">
         <div class="title">
-            <h6>{{ type || placeholder }}</h6>
-            <h3> {{ title || placeholder }} </h3>
+            <h6>({{ type || placeholder }})</h6>
+            <h4>{{ title || placeholder }}</h4>
         </div>
-
-        <div class="content">
-            <div class="image-mask">
+        <div class="content" tabindex="-1">
+            <div class="content-overflow">
                 <div class="made-for">
-                    <!-- Somehow, get the 'made-for' text in here -->
+                    <div class="made-for-blur"></div>
+                    <span>{{ t('page.projects.madeFor') }} {{ madeFor }}</span>
                 </div>
             </div>
-            <div class="icons">
-                <div class="icons-shadow"></div>
-                <ProjectIconsComponent :links="links" />
-            </div>
+            <ProjectIconsComponent :links="links" />
             <img :src="thumbnail" />
         </div>
     </div>
@@ -47,7 +44,74 @@ const placeholder = 'No props passed yet'
 
 
 <style scoped>
-img {
-    max-width: 200px;
+h6,
+h4 {
+    margin: 0;
+}
+
+.project-card {
+    max-width: 450px;
+    margin: 10px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content>img {
+    max-width: 100%;
+    max-height: 100%;
+    transition: filter ease var(--hover-off-phase);
+}
+
+.content-overflow {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 0 4px 4px;
+    overflow: hidden;
+}
+
+.made-for {
+    position: absolute;
+    bottom: -40px;
+    padding: 5px;
+    background-color: black;
+    text-align: center;
+    border-radius: 5px;
+    text-wrap: nowrap;
+    z-index: 2;
+    transition: bottom ease var(--hover-off-phase);
+}
+
+@media (hover: hover) {
+    .content:hover>img {
+        filter: blur(5px);
+        transition: filter ease var(--hover-on-phase);
+    }
+
+    .content:hover .made-for {
+        bottom: 0px;
+        transition: bottom ease var(--hover-on-phase);
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .title {
+        text-wrap: nowrap;
+    }
 }
 </style>

@@ -10,7 +10,7 @@
         }
     },
     {
-        "title": "Firefox-bookmark-scraper",
+        "title": "Firefox Bookmark Scraper",
         "type": "personal",
         "thumbnail": "projects/Firefox-bookmark-scraper.png",
         "links": {
@@ -20,7 +20,7 @@
         }
     },
     {
-        "title": "Rock-paper-scissors",
+        "title": "Rock Paper Scissors",
         "type": "excercise",
         "thumbnail": "projects/Rock-paper-scissors.png",
         "links": {
