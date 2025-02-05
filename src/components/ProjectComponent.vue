@@ -1,8 +1,3 @@
-<!--
-Make a single project render,
-by getting paths from parent component
--->
-
 <script setup>
 import { useI18n } from 'vue-i18n';
 import ProjectIconsComponent from '@/components/ProjectIconsComponent.vue';
@@ -18,8 +13,17 @@ const props = defineProps({
     links: Object,
 });
 
-// In case a prop isn't able to spawn, write this instead.
-const placeholder = 'No props passed yet'
+// Get Bootstrap icons.
+const bsIcon = (platform) => {
+    const icon = {
+        Linux: "bi bi-ubuntu",
+        MacOS: "bi bi-apple",
+        Windows: "bi bi-windows",
+        Browser: "bi bi-browser-firefox"
+    };
+
+    return icon[platform];
+};
 </script>
 
 
@@ -30,13 +34,16 @@ const placeholder = 'No props passed yet'
             <h4>{{ title || placeholder }}</h4>
         </div>
         <div class="content" tabindex="-1">
+            <ProjectIconsComponent :links="links" />
             <div class="content-overflow">
                 <div class="made-for">
                     {{ t('page.projects.madeFor') }} &nbsp;
-                    <div class="platform" v-for="platform in madeFor">{{ platform }}</div>
+                    <div class="platform" v-for="platform in madeFor">
+                        <span :class="bsIcon(platform)"></span>
+                        {{ platform }}
+                    </div>
                 </div>
             </div>
-            <ProjectIconsComponent :links="links" />
             <img :src="thumbnail" />
         </div>
     </div>
@@ -106,6 +113,7 @@ h4 {
     text-wrap: nowrap;
     z-index: 2;
     transition: transform ease-out var(--hover-off-phase);
+    user-select: none;
 }
 
 .platform {
@@ -131,6 +139,26 @@ h4 {
 @media screen and (min-width: 1280px) {
     .title {
         text-wrap: nowrap;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .made-for {
+        font-size: 4vw;
+    }
+}
+
+/* Mobile coverage. */
+
+@media (hover: none) {
+    .content:focus>img {
+        filter: blur(5px);
+        transition: filter ease-in var(--hover-on-phase);
+    }
+
+    .content:focus .made-for {
+        transform: translateY(0%);
+        transition: transform ease-in var(--hover-on-phase);
     }
 }
 </style>

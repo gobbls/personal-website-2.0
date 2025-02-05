@@ -46,6 +46,7 @@ const icon = (key) => {
     max-width: 70px;
     z-index: 3;
     transition: max-width ease-out var(--hover-off-phase);
+    pointer-events: none;
 }
 
 .icon img {
@@ -87,12 +88,28 @@ const icon = (key) => {
     .content:hover .icon {
         max-width: 80px;
         transition: max-width ease-in var(--hover-on-phase);
+        pointer-events: auto;
     }
 
     .icon:hover .hover-bar {
         opacity: 1;
         width: 100%;
         transition: all ease-in var(--hover-on-fast-phase);
+    }
+}
+
+/* Mobile coverage. */
+
+@media (hover: none) {
+    .content:focus .icons {
+        opacity: 1;
+        transition: opacity ease-in var(--hover-on-phase);
+    }
+
+    .content:focus .icon {
+        max-width: 80px;
+        transition: max-width ease-in var(--hover-on-phase);
+        pointer-events: auto;
     }
 }
 </style>
