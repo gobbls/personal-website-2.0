@@ -72,7 +72,7 @@ h4 {
 .content>img {
     max-width: 100%;
     max-height: 100%;
-    transition: filter ease var(--hover-off-phase);
+    transition: filter ease-out var(--hover-off-phase);
 }
 
 .content-overflow {
@@ -84,6 +84,11 @@ h4 {
     border-radius: 0 0 4px 4px;
     overflow: hidden;
 }
+
+/*
+ * TODO:
+ * - Adjust font-size in 'made-for' when on smaller viewports.
+ */
 
 .made-for {
     position: absolute;
@@ -100,7 +105,7 @@ h4 {
     text-align: center;
     text-wrap: nowrap;
     z-index: 2;
-    transition: transform ease var(--hover-off-phase);
+    transition: transform ease-out var(--hover-off-phase);
 }
 
 .platform {
@@ -114,12 +119,12 @@ h4 {
 @media (hover: hover) {
     .content:hover>img {
         filter: blur(5px);
-        transition: filter ease var(--hover-on-phase);
+        transition: filter ease-in var(--hover-on-phase);
     }
 
     .content:hover .made-for {
         transform: translateY(0%);
-        transition: transform ease var(--hover-on-phase);
+        transition: transform ease-in var(--hover-on-phase);
     }
 }
 

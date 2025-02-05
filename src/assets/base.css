@@ -15,6 +15,9 @@
 
     --hover-on-phase: 0.2s;
     --hover-off-phase: 0.4s;
+
+    --hover-on-fast-phase: 0.1s;
+    --hover-off-fast-phase: 0.2s;
 }
 
 body {

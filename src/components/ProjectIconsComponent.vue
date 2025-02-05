@@ -30,18 +30,22 @@ const icon = (key) => {
 <style scoped>
 .icons {
     position: absolute;
+    opacity: 0;
     width: fit-content;
     margin: 0 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     column-gap: 20px;
+    pointer-events: auto;
+    z-index: 1;
+    transition: opacity ease-out var(--hover-off-phase);
 }
 
 .icon {
-    max-width: 80px;
-    max-height: 80px;
-    z-index: 2;
+    max-width: 70px;
+    z-index: 3;
+    transition: max-width ease-out var(--hover-off-phase);
 }
 
 .icon img {
@@ -53,22 +57,42 @@ const icon = (key) => {
     position: absolute;
     width: 80%;
     margin-top: 20px;
-    box-shadow: 0 0 40px 60px #000000ea;
-    z-index: 1;
+    box-shadow: 0 0 40px 50px #000000ea;
+    z-index: 2;
 }
 
 .hover-bar {
     opacity: 0;
-    width: 100%;
+    margin: 0 auto;
+    width: 10%;
     height: 5px;
     border-radius: 3px;
     margin-top: 5px;
     background-color: white;
+    transition: all ease-out var(--hover-off-fast-phase);
 }
 
 @media (hover: hover) {
+
+    /* Override Bootstrap link-opacity */
+    a:hover {
+        opacity: 1;
+    }
+
+    .content:hover .icons {
+        opacity: 1;
+        transition: opacity ease-in var(--hover-on-phase);
+    }
+
+    .content:hover .icon {
+        max-width: 80px;
+        transition: max-width ease-in var(--hover-on-phase);
+    }
+
     .icon:hover .hover-bar {
         opacity: 1;
+        width: 100%;
+        transition: all ease-in var(--hover-on-fast-phase);
     }
 }
 </style>
