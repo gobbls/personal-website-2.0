@@ -52,7 +52,7 @@ const bsIcon = (platform) => {
 <style scoped>
 .project-card {
     max-width: 450px;
-    margin: 10px;
+    margin: 11px;
 }
 
 .title {
@@ -178,7 +178,7 @@ const bsIcon = (platform) => {
     }
 
     .content:focus .made-for {
-        transform: translateY(0%);
+        transform: translateY(-10%);
         transition: transform ease-in var(--hover-on-phase);
     }
 }

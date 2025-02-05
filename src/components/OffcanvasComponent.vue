@@ -33,6 +33,8 @@ import HomeNavigationComponent from '@/components/HomeNavigationComponent.vue';
     border: 1 solid white;
     border-radius: 0 20px 20px 0;
 
+    max-width: 200px;
+
     background-color: rgba(0, 0, 0, 0.2);
     color: var(--text);
 

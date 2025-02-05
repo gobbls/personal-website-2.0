@@ -35,6 +35,12 @@
                 }
             }
         },
-        "blog": {}
+        "blog": {
+            "post": {
+                "My Experience With Keyboards": {},
+                "Advent Of Code and Imposter Syndrome": {},
+                "Minimalism": {}
+            }
+        }
     }
 }
