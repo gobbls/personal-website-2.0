@@ -31,7 +31,7 @@ const icon = (key) => {
 .icons {
     position: absolute;
     width: fit-content;
-    margin: 0 10px;
+    margin: 0 30px;
     display: flex;
     align-items: center;
     justify-content: center;

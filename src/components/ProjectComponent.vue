@@ -87,25 +87,28 @@ h4 {
 
 .made-for {
     position: absolute;
-    bottom: -40px;
+    bottom: 0;
+    transform: translateY(100%);
+    background-color: black;
+    border-radius: 7px;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: row;
+    flex-wrap: wrap;
     padding: 5px;
-    background-color: black;
     text-align: center;
-    border-radius: 7px;
     text-wrap: nowrap;
     z-index: 2;
-    transition: bottom ease var(--hover-off-phase);
+    transition: transform ease var(--hover-off-phase);
 }
 
 .platform {
+    margin: 2px;
     background-color: white;
     border-radius: 4px;
     padding: 0 3px;
     color: black;
-    margin: 2px;
 }
 
 @media (hover: hover) {
@@ -115,8 +118,8 @@ h4 {
     }
 
     .content:hover .made-for {
-        bottom: 0px;
-        transition: bottom ease var(--hover-on-phase);
+        transform: translateY(0%);
+        transition: transform ease var(--hover-on-phase);
     }
 }
 
