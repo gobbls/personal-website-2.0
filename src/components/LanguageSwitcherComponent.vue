@@ -42,18 +42,28 @@ const { t } = useI18n();
     right: 20px;
 }
 
+.btn {
+    font-size: 1.2rem;
+}
+
 .dropdown-menu {
     min-width: fit-content;
-    background-color: black;
     padding: 7px;
+
+    background-color: var(--base);
+
+    font-size: 1.2rem;
 }
 
 .dropdown-item:hover {
+    border-radius: 5px;
+
     background-color: var(--text);
     color: var(--base);
-    border-radius: 5px;
+
     text-shadow: 0 0 10px black;
-    user-select: none;
+
     cursor: pointer;
+    user-select: none;
 }
 </style>

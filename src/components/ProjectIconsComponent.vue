@@ -30,21 +30,24 @@ const icon = (key) => {
 <style scoped>
 .icons {
     position: absolute;
-    opacity: 0;
-    width: fit-content;
-    margin: 0 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    column-gap: 20px;
-    pointer-events: auto;
     z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+    width: fit-content;
+    opacity: 0;
+    margin: 0 30px 20px 30px;
+
     transition: opacity ease-out var(--hover-off-phase);
+    pointer-events: auto;
 }
 
 .icon {
-    max-width: 70px;
     z-index: 3;
+    max-width: 70px;
+
     transition: max-width ease-out var(--hover-off-phase);
     pointer-events: none;
 }
@@ -56,20 +59,24 @@ const icon = (key) => {
 
 .icons-shadow {
     position: absolute;
+    z-index: 2;
+
     width: 80%;
     margin-top: 20px;
+
     box-shadow: 0 0 40px 50px #000000ea;
-    z-index: 2;
 }
 
 .hover-bar {
+    height: 5px;
+    width: 10%;
+    border-radius: 3px;
     opacity: 0;
     margin: 0 auto;
-    width: 10%;
-    height: 5px;
-    border-radius: 3px;
     margin-top: 5px;
+
     background-color: white;
+
     transition: all ease-out var(--hover-off-fast-phase);
 }
 
@@ -92,8 +99,8 @@ const icon = (key) => {
     }
 
     .icon:hover .hover-bar {
-        opacity: 1;
         width: 100%;
+        opacity: 1;
         transition: all ease-in var(--hover-on-fast-phase);
     }
 }

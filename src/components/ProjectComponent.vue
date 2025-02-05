@@ -19,7 +19,8 @@ const bsIcon = (platform) => {
         Linux: "bi bi-ubuntu",
         MacOS: "bi bi-apple",
         Windows: "bi bi-windows",
-        Browser: "bi bi-browser-firefox"
+        Browser: "bi bi-browser-firefox",
+        Nettleser: "bi bi-browser-firefox"
     };
 
     return icon[platform];
@@ -34,27 +35,21 @@ const bsIcon = (platform) => {
             <h4>{{ title || placeholder }}</h4>
         </div>
         <div class="content" tabindex="-1">
+            <img :src="thumbnail" />
             <ProjectIconsComponent :links="links" />
-            <div class="content-overflow">
-                <div class="made-for">
-                    {{ t('page.projects.madeFor') }} &nbsp;
-                    <div class="platform" v-for="platform in madeFor">
-                        <span :class="bsIcon(platform)"></span>
-                        {{ platform }}
-                    </div>
+            <div class="made-for">
+                <span>{{ t('page.projects.madeFor') }}</span>
+                <div class="platform" v-for="platform in madeFor">
+                    <span :class="bsIcon(platform)"></span>
+                    {{ platform }}
                 </div>
             </div>
-            <img :src="thumbnail" />
         </div>
     </div>
 </template>
 
 
 <style scoped>
-h4 {
-    margin: 0;
-}
-
 .project-card {
     max-width: 450px;
     margin: 10px;
@@ -64,32 +59,29 @@ h4 {
     display: flex;
     align-items: center;
     justify-content: center;
+
     gap: 10px;
-    margin-bottom: 5px;
+    padding: 0 10px;
+    margin-bottom: -5px;
+
     font-size: 0.9em;
 }
 
 .content {
     position: relative;
+
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .content>img {
     max-width: 100%;
     max-height: 100%;
-    transition: filter ease-out var(--hover-off-phase);
-}
+    padding: 10px;
 
-.content-overflow {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    border-radius: 0 0 4px 4px;
-    overflow: hidden;
+    transition: filter ease-out var(--hover-off-phase);
 }
 
 /*
@@ -99,29 +91,39 @@ h4 {
 
 .made-for {
     position: absolute;
+    z-index: 2;
     bottom: 0;
-    transform: translateY(100%);
-    background-color: black;
-    border-radius: 7px;
+    transform: translateY(110%);
+
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: row;
+    align-items: center;
     flex-wrap: wrap;
-    padding: 5px;
+    max-width: 85%;
+    border-radius: 7px;
+    padding: 2px;
+
+    background-color: white;
+    color: black;
+
     text-align: center;
     text-wrap: nowrap;
-    z-index: 2;
+
     transition: transform ease-out var(--hover-off-phase);
     user-select: none;
 }
 
+.made-for>span {
+    padding: 0 5px;
+}
+
 .platform {
+    border-radius: 6px;
+    padding: 3px 7px;
     margin: 2px;
-    background-color: white;
-    border-radius: 4px;
-    padding: 0 3px;
-    color: black;
+
+    background-color: black;
+    color: white;
 }
 
 @media (hover: hover) {
@@ -131,7 +133,7 @@ h4 {
     }
 
     .content:hover .made-for {
-        transform: translateY(0%);
+        transform: translateY(-10%);
         transition: transform ease-in var(--hover-on-phase);
     }
 }
@@ -142,9 +144,28 @@ h4 {
     }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 500px) {
+    .project-card {
+        margin: 0px;
+        margin-bottom: 10px;
+    }
+
+    .content>img {
+        padding: 10px;
+    }
+
     .made-for {
-        font-size: 4vw;
+        padding: 0;
+        font-size: 3vw;
+    }
+
+    .title {
+        margin-bottom: -7px;
+        font-size: 3vw;
+    }
+
+    h4 {
+        font-size: 5vw;
     }
 }
 

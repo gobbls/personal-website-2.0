@@ -26,7 +26,7 @@ img {
 }
 
 p {
-    text-align: center;
     margin: 20px 0;
+    text-align: center;
 }
 </style>

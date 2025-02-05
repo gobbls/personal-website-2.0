@@ -24,36 +24,44 @@ import HomeNavigationComponent from '@/components/HomeNavigationComponent.vue';
     position: absolute;
     top: 20px;
     left: 20px;
+
     background-color: transparent;
     border-color: var(--text);
 }
 
 .offcanvas {
-    color: var(--text);
-    text-align: center;
     border: 1 solid white;
+    border-radius: 0 20px 20px 0;
+
+    background-color: rgba(0, 0, 0, 0.2);
+    color: var(--text);
+
+    text-align: center;
+
     box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1),
         inset 0 0 150px rgba(255, 255, 255, 0.1);
-    border-radius: 0 20px 20px 0;
-    background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(7px);
 }
 
 .offcanvas-body {
-    height: 100%;
     display: flex;
-    text-align: center;
     justify-content: center;
+
+    height: 100%;
+
+    text-align: center;
 }
 
 .btn-close-white {
     position: absolute;
     top: 0;
     right: 0;
+
+    border: 2px solid transparent;
+    border-radius: 2em;
     margin: 10px;
     opacity: 1;
-    border-radius: 2em;
-    border: 2px solid transparent;
+
     box-shadow: none;
 }
 
@@ -64,6 +72,7 @@ import HomeNavigationComponent from '@/components/HomeNavigationComponent.vue';
 @media (hover :hover) {
     .btn-close-white:hover {
         border: 2px solid black;
+
         background-color: transparent;
     }
 }
