@@ -10,15 +10,10 @@ import HomeNavigationComponent from '@/components/HomeNavigationComponent.vue';
     </button>
 
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-                aria-label="Close"></button>
-        </div>
+        <!-- <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5> -->
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         <div class="offcanvas-body">
-            <div>
-                <HomeNavigationComponent />
-            </div>
+            <HomeNavigationComponent />
         </div>
     </div>
 </template>
@@ -40,11 +35,22 @@ import HomeNavigationComponent from '@/components/HomeNavigationComponent.vue';
     box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1),
         inset 0 0 150px rgba(255, 255, 255, 0.1);
     border-radius: 0 20px 20px 0;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(7px);
 }
 
+.offcanvas-body {
+    height: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
 .btn-close-white {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
     opacity: 1;
     border-radius: 2em;
     border: 2px solid transparent;

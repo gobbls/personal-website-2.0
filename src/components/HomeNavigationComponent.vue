@@ -42,12 +42,15 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 nav a {
     width: fit-content;
     font-size: 1.5em;
     text-decoration: none;
+    text-shadow: 0px 0px 30px black,
+        0px 0px 30px black;
 }
 
 nav a.router-link-exact-active {

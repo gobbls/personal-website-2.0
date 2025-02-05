@@ -26,7 +26,7 @@ const placeholder = 'No props passed yet'
 <template>
     <div class="project-card">
         <div class="title">
-            <h6>({{ type || placeholder }})</h6>
+            ({{ type || placeholder }})
             <h4>{{ title || placeholder }}</h4>
         </div>
         <div class="content" tabindex="-1">
@@ -44,7 +44,6 @@ const placeholder = 'No props passed yet'
 
 
 <style scoped>
-h6,
 h4 {
     margin: 0;
 }
@@ -60,6 +59,7 @@ h4 {
     justify-content: center;
     gap: 10px;
     margin-bottom: 5px;
+    font-size: 0.9em;
 }
 
 .content {
