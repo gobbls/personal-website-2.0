@@ -13,15 +13,25 @@
             "project": {
                 "AKSOSPM": {
                     "type": "jobb",
-                    "madeFor": "Linux, MacOS, Windows"
+                    "madeFor": [
+                        "Linux",
+                        "MacOS",
+                        "Windows"
+                    ]
                 },
                 "Firefox Bookmark Scraper": {
                     "type": "personlig",
-                    "madeFor": "Linux, MacOS, Windows"
+                    "madeFor": [
+                        "Linux",
+                        "MacOS",
+                        "Windows"
+                    ]
                 },
                 "Rock Paper Scissors": {
                     "type": "øvelse",
-                    "madeFor": "Nettleser"
+                    "madeFor": [
+                        "Nettleser"
+                    ]
                 }
             }
         },

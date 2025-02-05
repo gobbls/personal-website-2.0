@@ -21,13 +21,12 @@ const { t } = useI18n();
 }
 
 img {
-    max-width: 150px;
+    max-width: 250px;
     border-radius: 50%;
 }
 
 p {
     text-align: center;
     margin: 20px 0;
-    font-size: 0.8em;
 }
 </style>

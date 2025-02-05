@@ -13,14 +13,13 @@ const projects = ref(json);
 
 
 <template>
-
     <div class="projects-wrapper">
         <div v-for="data in projects">
             <ProjectComponent
                 :title="data.title"
                 :type="t(`page.projects.project.${data.title}.type`)"
                 :thumbnail="data.thumbnail"
-                :madeFor="t(`page.projects.project.${data.title}.madeFor`)"
+                :madeFor="$tm(`page.projects.project.${data.title}.madeFor`)"
                 :links="data.links" />
         </div>
     </div>

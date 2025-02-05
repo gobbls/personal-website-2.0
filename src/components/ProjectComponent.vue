@@ -14,7 +14,7 @@ const props = defineProps({
     title: String,
     type: String,
     thumbnail: String,
-    madeFor: String,
+    madeFor: Array,
     links: Object,
 });
 
@@ -32,8 +32,8 @@ const placeholder = 'No props passed yet'
         <div class="content" tabindex="-1">
             <div class="content-overflow">
                 <div class="made-for">
-                    <div class="made-for-blur"></div>
-                    <span>{{ t('page.projects.madeFor') }} {{ madeFor }}</span>
+                    {{ t('page.projects.madeFor') }} &nbsp;
+                    <div class="platform" v-for="platform in madeFor">{{ platform }}</div>
                 </div>
             </div>
             <ProjectIconsComponent :links="links" />
@@ -88,13 +88,24 @@ h4 {
 .made-for {
     position: absolute;
     bottom: -40px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
     padding: 5px;
     background-color: black;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 7px;
     text-wrap: nowrap;
     z-index: 2;
     transition: bottom ease var(--hover-off-phase);
+}
+
+.platform {
+    background-color: white;
+    border-radius: 4px;
+    padding: 0 3px;
+    color: black;
+    margin: 2px;
 }
 
 @media (hover: hover) {

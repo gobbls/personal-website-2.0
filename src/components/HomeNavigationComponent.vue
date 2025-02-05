@@ -46,7 +46,7 @@ nav {
 
 nav a {
     width: fit-content;
-    font-size: 1.2em;
+    font-size: 1.5em;
     text-decoration: none;
 }
 

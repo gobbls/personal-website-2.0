@@ -13,15 +13,25 @@
             "project": {
                 "AKSOSPM": {
                     "type": "work",
-                    "madeFor": "Linux, MacOS, Windows"
+                    "madeFor": [
+                        "Linux",
+                        "MacOS",
+                        "Windows"
+                    ]
                 },
                 "Firefox Bookmark Scraper": {
                     "type": "personal",
-                    "madeFor": "Linux, MacOS, Windows"
+                    "madeFor": [
+                        "Linux",
+                        "MacOS",
+                        "Windows"
+                    ]
                 },
                 "Rock Paper Scissors": {
                     "type": "exercise",
-                    "madeFor": "Browser"
+                    "madeFor": [
+                        "Browser"
+                    ]
                 }
             }
         },
