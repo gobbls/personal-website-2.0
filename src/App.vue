@@ -1,8 +1,7 @@
 <script setup>
 import { useI18n } from 'vue-i18n';
 import { RouterView } from 'vue-router';
-import LanguageSwitcherComponent from './components/LanguageSwitcherComponent.vue';
-import OffcanvasComponent from './components/OffcanvasComponent.vue';
+import NavbarComponent from '@/components/NavbarComponent.vue';
 
 const { t } = useI18n();
 </script>
@@ -10,8 +9,7 @@ const { t } = useI18n();
 
 <template>
     <header>
-        <OffcanvasComponent />
-        <LanguageSwitcherComponent />
+        <NavbarComponent />
     </header>
     <main>
         <RouterView />

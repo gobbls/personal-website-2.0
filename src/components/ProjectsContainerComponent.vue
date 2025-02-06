@@ -29,5 +29,6 @@ const projects = ref(json);
 <style scoped>
 div.projects-wrapper {
     flex-wrap: wrap;
+    gap: 15px;
 }
 </style>

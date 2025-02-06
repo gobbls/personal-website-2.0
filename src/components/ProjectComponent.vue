@@ -61,12 +61,10 @@ const bsIcon = (platform) => {
 <style scoped>
 div.project-card {
     max-width: 450px;
-    margin: 11px;
 }
 
 div.title {
     gap: 10px;
-    padding: 0 10px;
     margin-bottom: -5px;
     font-size: 0.9em;
 }
@@ -80,12 +78,11 @@ div.content>img {
     max-width: 100%;
     max-height: 100%;
     padding: 10px;
-    transition: filter ease-out var(--hover-off-phase);
+    transition: filter ease var(--hover-on-phase);
 }
 
 div.made-for {
     position: absolute;
-    z-index: 2;
     bottom: 0;
     transform: translateY(110%);
     flex-wrap: wrap;
@@ -96,7 +93,7 @@ div.made-for {
     color: black;
     text-align: center;
     text-wrap: nowrap;
-    transition: transform ease-out var(--hover-off-phase);
+    transition: transform ease var(--hover-on-phase);
     user-select: none;
 }
 
@@ -128,15 +125,6 @@ div.platform {
         font-size: 3vw;
     }
 
-    div.project-card {
-        margin: 0px;
-        margin-bottom: 10px;
-    }
-
-    div.content>img {
-        padding: 10px;
-    }
-
     div.made-for {
         padding: 0;
         font-size: 3vw;
@@ -147,12 +135,10 @@ div.platform {
 @media (hover: hover) and (pointer: fine) {
     div.content:hover>img {
         filter: blur(5px);
-        transition: filter ease-in var(--hover-on-phase);
     }
 
     div.content:hover div.made-for {
         transform: translateY(-10%);
-        transition: transform ease-in var(--hover-on-phase);
     }
 }
 
@@ -160,12 +146,10 @@ div.platform {
 @media (hover: none) and (any-pointer: coarse) {
     div.content:focus-within>img {
         filter: blur(5px);
-        transition: filter ease-in var(--hover-on-phase);
     }
 
     div.content:focus-within div.made-for {
         transform: translateY(-10%);
-        transition: transform ease-in var(--hover-on-phase);
     }
 }
 </style>

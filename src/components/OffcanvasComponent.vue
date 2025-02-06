@@ -21,7 +21,6 @@ import HomeNavigationComponent from '@/components/HomeNavigationComponent.vue';
 
 <style scoped>
 button.menu-button {
-    position: absolute;
     top: 20px;
     left: 20px;
     background-color: transparent;

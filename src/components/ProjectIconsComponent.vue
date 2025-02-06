@@ -30,20 +30,18 @@ const icon = (key) => {
 <style scoped>
 div.icons {
     position: absolute;
-    z-index: 1;
     column-gap: 20px;
     width: fit-content;
     opacity: 0;
     margin: 0 30px 20px 30px;
-    transition: opacity ease-out var(--hover-off-phase);
+    transition: opacity ease var(--hover-on-phase);
     pointer-events: none;
 }
 
 div.icon {
-    z-index: 3;
+    z-index: 1;
     max-width: 70px;
-
-    transition: max-width ease-out var(--hover-off-phase);
+    transition: max-width ease var(--hover-on-phase);
 }
 
 div.icon img {
@@ -53,10 +51,9 @@ div.icon img {
 
 div.icons-shadow {
     position: absolute;
-    z-index: 2;
     width: 80%;
     margin-top: 20px;
-    box-shadow: 0 0 40px 50px #000000ea;
+    box-shadow: 0 0 40px 50px #000000D9;
 }
 
 div.hover-bar {
@@ -64,10 +61,9 @@ div.hover-bar {
     width: 10%;
     border-radius: 3px;
     opacity: 0;
-    margin: 0 auto;
-    margin-top: 5px;
-    background-color: white;
-    transition: all ease-out var(--hover-off-fast-phase);
+    margin: 5px auto 0 auto;
+    background-color: var(--text);
+    transition: all ease var(--hover-off-fast-phase);
 }
 
 /* Cursor-specific devices */
@@ -80,20 +76,17 @@ div.hover-bar {
 
     div.content:hover div.icons {
         opacity: 1;
-        transition: opacity ease-in var(--hover-on-phase);
         pointer-events: auto;
     }
 
     div.content:hover div.icon {
         max-width: 80px;
-        transition: max-width ease-in var(--hover-on-phase);
         pointer-events: auto;
     }
 
     div.icon:hover div.hover-bar {
         width: 100%;
         opacity: 1;
-        transition: all ease-in var(--hover-on-fast-phase);
     }
 }
 
@@ -101,13 +94,11 @@ div.hover-bar {
 @media (hover: none) and (any-pointer: coarse) {
     div.content:focus-within .icons {
         opacity: 1;
-        transition: opacity ease-in var(--hover-on-phase);
         pointer-events: auto;
     }
 
     div.content.content:focus-within .icon {
         max-width: 80px;
-        transition: max-width ease-in var(--hover-on-phase);
     }
 }
 </style>

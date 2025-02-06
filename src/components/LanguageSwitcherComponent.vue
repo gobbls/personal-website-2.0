@@ -36,12 +36,6 @@ const { t } = useI18n();
 
 
 <style scoped>
-div.language-switch {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
 button.btn {
     font-size: 1.2rem;
 }
