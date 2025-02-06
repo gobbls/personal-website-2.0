@@ -12,7 +12,7 @@ import HomeNavigationComponent from '@/components/HomeNavigationComponent.vue';
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
         <!-- <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5> -->
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        <div class="offcanvas-body">
+        <div class="offcanvas-body flx-center">
             <HomeNavigationComponent />
         </div>
     </div>
@@ -20,45 +20,35 @@ import HomeNavigationComponent from '@/components/HomeNavigationComponent.vue';
 
 
 <style scoped>
-.menu-button {
+button.menu-button {
     position: absolute;
     top: 20px;
     left: 20px;
-
     background-color: transparent;
     border-color: var(--text);
 }
 
-.offcanvas {
+div.offcanvas {
     border: 1 solid white;
     border-radius: 0 20px 20px 0;
-
     max-width: 200px;
-
     background-color: rgba(0, 0, 0, 0.2);
     color: var(--text);
-
     text-align: center;
-
     box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1),
         inset 0 0 150px rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(7px);
 }
 
-.offcanvas-body {
-    display: flex;
-    justify-content: center;
-
+div.offcanvas-body {
     height: 100%;
-
     text-align: center;
 }
 
-.btn-close-white {
+button.btn-close-white {
     position: absolute;
     top: 0;
     right: 0;
-
     border: 2px solid transparent;
     border-radius: 2em;
     margin: 10px;
@@ -67,14 +57,13 @@ import HomeNavigationComponent from '@/components/HomeNavigationComponent.vue';
     box-shadow: none;
 }
 
-.btn-close-white:active {
+button.btn-close-white:active {
     box-shadow: none;
 }
 
 @media (hover :hover) {
-    .btn-close-white:hover {
+    button.btn-close-white:hover {
         border: 2px solid black;
-
         background-color: transparent;
     }
 }

@@ -17,7 +17,7 @@ const icon = (key) => {
 
 
 <template>
-    <div class="icons">
+    <div class="icons flx-center">
         <div class="icons-shadow"></div>
         <div class="icon" v-for="(value, key) in links">
             <a tabindex="-1" :href="links[key]" target="_blank"><img :src="icon(key)" /></a>
@@ -28,59 +28,49 @@ const icon = (key) => {
 
 
 <style scoped>
-.icons {
+div.icons {
     position: absolute;
     z-index: 1;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
     column-gap: 20px;
     width: fit-content;
     opacity: 0;
     margin: 0 30px 20px 30px;
-
     transition: opacity ease-out var(--hover-off-phase);
     pointer-events: none;
 }
 
-.icon {
+div.icon {
     z-index: 3;
     max-width: 70px;
 
     transition: max-width ease-out var(--hover-off-phase);
 }
 
-.icon img {
+div.icon img {
     max-width: 100%;
     max-height: 100%;
 }
 
-.icons-shadow {
+div.icons-shadow {
     position: absolute;
     z-index: 2;
-
     width: 80%;
     margin-top: 20px;
-
     box-shadow: 0 0 40px 50px #000000ea;
 }
 
-.hover-bar {
+div.hover-bar {
     height: 5px;
     width: 10%;
     border-radius: 3px;
     opacity: 0;
     margin: 0 auto;
     margin-top: 5px;
-
     background-color: white;
-
     transition: all ease-out var(--hover-off-fast-phase);
 }
 
 /* Cursor-specific devices */
-
 @media (hover: hover) and (pointer: fine) {
 
     /* Override Bootstrap link-opacity */
@@ -88,19 +78,19 @@ const icon = (key) => {
         opacity: 1;
     }
 
-    .content:hover .icons {
+    div.content:hover div.icons {
         opacity: 1;
         transition: opacity ease-in var(--hover-on-phase);
         pointer-events: auto;
     }
 
-    .content:hover .icon {
+    div.content:hover div.icon {
         max-width: 80px;
         transition: max-width ease-in var(--hover-on-phase);
         pointer-events: auto;
     }
 
-    .icon:hover .hover-bar {
+    div.icon:hover div.hover-bar {
         width: 100%;
         opacity: 1;
         transition: all ease-in var(--hover-on-fast-phase);
@@ -108,15 +98,14 @@ const icon = (key) => {
 }
 
 /* Mobile coverage. */
-
 @media (hover: none) and (any-pointer: coarse) {
-    .content:focus-within .icons {
+    div.content:focus-within .icons {
         opacity: 1;
         transition: opacity ease-in var(--hover-on-phase);
         pointer-events: auto;
     }
 
-    .content.content:focus-within .icon {
+    div.content.content:focus-within .icon {
         max-width: 80px;
         transition: max-width ease-in var(--hover-on-phase);
     }

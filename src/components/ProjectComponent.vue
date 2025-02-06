@@ -1,3 +1,12 @@
+<!--
+    TODO:
+    - To fix; project 'focused'-styling re-applying when revisiting the page after leaving:
+        Add some sort of state-checking in JS if a project is in focus and apply
+        relevant styling to the focused class, removing the class when loosing focus.
+        Maybe loose the styling when leaving the page and when scrolling aswell(?)
+-->
+
+
 <script setup>
 import { useI18n } from 'vue-i18n';
 import ProjectIconsComponent from '@/components/ProjectIconsComponent.vue';
@@ -30,14 +39,14 @@ const bsIcon = (platform) => {
 
 <template>
     <div class="project-card">
-        <div class="title">
+        <div class="title flx-center">
             ({{ type || placeholder }})
             <h4>{{ title || placeholder }}</h4>
         </div>
-        <div class="content" tabindex="-1">
+        <div class="content flx-center" tabindex="-1">
             <img :src="thumbnail" />
             <ProjectIconsComponent :links="links" />
-            <div class="made-for">
+            <div class="made-for flx-center">
                 <span>{{ t('page.projects.madeFor') }}</span>
                 <div class="platform" v-for="platform in madeFor">
                     <span :class="bsIcon(platform)"></span>
@@ -56,23 +65,14 @@ div.project-card {
 }
 
 div.title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     gap: 10px;
     padding: 0 10px;
     margin-bottom: -5px;
-
     font-size: 0.9em;
 }
 
 div.content {
     position: relative;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
 }
 
@@ -80,7 +80,6 @@ div.content>img {
     max-width: 100%;
     max-height: 100%;
     padding: 10px;
-
     transition: filter ease-out var(--hover-off-phase);
 }
 
@@ -89,21 +88,14 @@ div.made-for {
     z-index: 2;
     bottom: 0;
     transform: translateY(110%);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
     max-width: 85%;
     border-radius: 7px;
     padding: 2px;
-
     background-color: white;
     color: black;
-
     text-align: center;
     text-wrap: nowrap;
-
     transition: transform ease-out var(--hover-off-phase);
     user-select: none;
 }
@@ -116,7 +108,6 @@ div.platform {
     border-radius: 6px;
     padding: 3px 7px;
     margin: 2px;
-
     background-color: black;
     color: white;
 }
@@ -153,28 +144,26 @@ div.platform {
 }
 
 /* Cursor-specific devices */
-
 @media (hover: hover) and (pointer: fine) {
     div.content:hover>img {
         filter: blur(5px);
         transition: filter ease-in var(--hover-on-phase);
     }
 
-    div.content:hover .made-for {
+    div.content:hover div.made-for {
         transform: translateY(-10%);
         transition: transform ease-in var(--hover-on-phase);
     }
 }
 
 /* Mobile coverage. */
-
 @media (hover: none) and (any-pointer: coarse) {
     div.content:focus-within>img {
         filter: blur(5px);
         transition: filter ease-in var(--hover-on-phase);
     }
 
-    div.content:focus-within .made-for {
+    div.content:focus-within div.made-for {
         transform: translateY(-10%);
         transition: transform ease-in var(--hover-on-phase);
     }

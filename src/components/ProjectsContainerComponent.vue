@@ -13,7 +13,7 @@ const projects = ref(json);
 
 
 <template>
-    <div class="projects-wrapper">
+    <div class="projects-wrapper flx-center">
         <div v-for="data in projects">
             <ProjectComponent
                 :title="data.title"
@@ -27,9 +27,7 @@ const projects = ref(json);
 
 
 <style scoped>
-.projects-wrapper {
-    display: flex;
-    justify-content: center;
+div.projects-wrapper {
     flex-wrap: wrap;
 }
 </style>

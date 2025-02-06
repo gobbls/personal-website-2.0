@@ -11,7 +11,7 @@ const { t } = useI18n();
 </script>
 
 <template>
-    <nav>
+    <nav class="flx-center">
         <RouterLink to="/">{{ t('navigation.home') }}</RouterLink>
         <RouterLink to="/projects">{{ t('navigation.projects') }}</RouterLink>
         <RouterLink to="/blog">{{ t('navigation.blog') }}</RouterLink>
@@ -31,10 +31,7 @@ hr {
 }
 
 nav {
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 nav a {

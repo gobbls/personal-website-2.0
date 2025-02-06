@@ -14,7 +14,7 @@ const { t } = useI18n();
 
 
 <style scoped>
-.profile {
+div.profile {
     display: flex;
     flex-direction: column;
     place-items: center;

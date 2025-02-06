@@ -36,33 +36,28 @@ const { t } = useI18n();
 
 
 <style scoped>
-.language-switch {
+div.language-switch {
     position: absolute;
     top: 20px;
     right: 20px;
 }
 
-.btn {
+button.btn {
     font-size: 1.2rem;
 }
 
-.dropdown-menu {
+ul.dropdown-menu {
     min-width: fit-content;
     padding: 7px;
-
     background-color: var(--base);
-
     font-size: 1.2rem;
 }
 
-.dropdown-item:hover {
+a.dropdown-item:hover {
     border-radius: 5px;
-
     background-color: var(--text);
     color: var(--base);
-
     text-shadow: 0 0 10px black;
-
     cursor: pointer;
     user-select: none;
 }
