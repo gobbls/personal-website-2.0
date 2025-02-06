@@ -50,12 +50,12 @@ const bsIcon = (platform) => {
 
 
 <style scoped>
-.project-card {
+div.project-card {
     max-width: 450px;
     margin: 11px;
 }
 
-.title {
+div.title {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,7 +67,7 @@ const bsIcon = (platform) => {
     font-size: 0.9em;
 }
 
-.content {
+div.content {
     position: relative;
 
     display: flex;
@@ -76,7 +76,7 @@ const bsIcon = (platform) => {
     overflow: hidden;
 }
 
-.content>img {
+div.content>img {
     max-width: 100%;
     max-height: 100%;
     padding: 10px;
@@ -84,12 +84,7 @@ const bsIcon = (platform) => {
     transition: filter ease-out var(--hover-off-phase);
 }
 
-/*
- * TODO:
- * - Adjust font-size in 'made-for' when on smaller viewports.
- */
-
-.made-for {
+div.made-for {
     position: absolute;
     z-index: 2;
     bottom: 0;
@@ -113,11 +108,11 @@ const bsIcon = (platform) => {
     user-select: none;
 }
 
-.made-for>span {
+div.made-for>span {
     padding: 0 5px;
 }
 
-.platform {
+div.platform {
     border-radius: 6px;
     padding: 3px 7px;
     margin: 2px;
@@ -126,58 +121,60 @@ const bsIcon = (platform) => {
     color: white;
 }
 
-@media (hover: hover) {
-    .content:hover>img {
-        filter: blur(5px);
-        transition: filter ease-in var(--hover-on-phase);
-    }
-
-    .content:hover .made-for {
-        transform: translateY(-10%);
-        transition: transform ease-in var(--hover-on-phase);
-    }
-}
-
 @media screen and (min-width: 1280px) {
-    .title {
+    div.title {
         text-wrap: nowrap;
     }
 }
 
 @media screen and (max-width: 500px) {
-    .project-card {
-        margin: 0px;
-        margin-bottom: 10px;
+    h4 {
+        font-size: 5vw;
     }
 
-    .content>img {
-        padding: 10px;
-    }
-
-    .made-for {
-        padding: 0;
-        font-size: 3vw;
-    }
-
-    .title {
+    div.title {
         margin-bottom: -7px;
         font-size: 3vw;
     }
 
-    h4 {
-        font-size: 5vw;
+    div.project-card {
+        margin: 0px;
+        margin-bottom: 10px;
+    }
+
+    div.content>img {
+        padding: 10px;
+    }
+
+    div.made-for {
+        padding: 0;
+        font-size: 3vw;
+    }
+}
+
+/* Cursor-specific devices */
+
+@media (hover: hover) and (pointer: fine) {
+    div.content:hover>img {
+        filter: blur(5px);
+        transition: filter ease-in var(--hover-on-phase);
+    }
+
+    div.content:hover .made-for {
+        transform: translateY(-10%);
+        transition: transform ease-in var(--hover-on-phase);
     }
 }
 
 /* Mobile coverage. */
 
-@media (hover: none) {
-    .content:focus>img {
+@media (hover: none) and (any-pointer: coarse) {
+    div.content:focus-within>img {
         filter: blur(5px);
         transition: filter ease-in var(--hover-on-phase);
     }
 
-    .content:focus .made-for {
+    div.content:focus-within .made-for {
         transform: translateY(-10%);
         transition: transform ease-in var(--hover-on-phase);
     }

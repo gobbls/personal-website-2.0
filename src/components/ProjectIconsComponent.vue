@@ -41,7 +41,7 @@ const icon = (key) => {
     margin: 0 30px 20px 30px;
 
     transition: opacity ease-out var(--hover-off-phase);
-    pointer-events: auto;
+    pointer-events: none;
 }
 
 .icon {
@@ -49,7 +49,6 @@ const icon = (key) => {
     max-width: 70px;
 
     transition: max-width ease-out var(--hover-off-phase);
-    pointer-events: none;
 }
 
 .icon img {
@@ -80,7 +79,9 @@ const icon = (key) => {
     transition: all ease-out var(--hover-off-fast-phase);
 }
 
-@media (hover: hover) {
+/* Cursor-specific devices */
+
+@media (hover: hover) and (pointer: fine) {
 
     /* Override Bootstrap link-opacity */
     a:hover {
@@ -90,6 +91,7 @@ const icon = (key) => {
     .content:hover .icons {
         opacity: 1;
         transition: opacity ease-in var(--hover-on-phase);
+        pointer-events: auto;
     }
 
     .content:hover .icon {
@@ -107,16 +109,16 @@ const icon = (key) => {
 
 /* Mobile coverage. */
 
-@media (hover: none) {
-    .content:focus .icons {
+@media (hover: none) and (any-pointer: coarse) {
+    .content:focus-within .icons {
         opacity: 1;
         transition: opacity ease-in var(--hover-on-phase);
+        pointer-events: auto;
     }
 
-    .content:focus .icon {
+    .content.content:focus-within .icon {
         max-width: 80px;
         transition: max-width ease-in var(--hover-on-phase);
-        pointer-events: auto;
     }
 }
 </style>

@@ -34,7 +34,6 @@ const bsIcon = (platform) => {
             <h4>{{ title || placeholder }}</h4>
         </div>
         <div class="content" tabindex="-1">
-            <ProjectIconsComponent :links="links" />
             <div class="content-overflow">
                 <div class="made-for">
                     {{ t('page.projects.madeFor') }} &nbsp;
@@ -44,6 +43,7 @@ const bsIcon = (platform) => {
                     </div>
                 </div>
             </div>
+            <ProjectIconsComponent :links="links" />
             <img :src="thumbnail" />
         </div>
     </div>
