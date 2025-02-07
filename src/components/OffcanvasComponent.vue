@@ -52,7 +52,6 @@ button.btn-close-white {
     border-radius: 2em;
     margin: 10px;
     opacity: 1;
-
     box-shadow: none;
 }
 
