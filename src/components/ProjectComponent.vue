@@ -40,8 +40,8 @@ const bsIcon = (platform) => {
 <template>
     <div class="project-card">
         <div class="title flx-center">
-            ({{ type || placeholder }})
-            <h4>{{ title || placeholder }}</h4>
+            ({{ type }})
+            <h4>{{ title }}</h4>
         </div>
         <div class="content flx-center" tabindex="-1">
             <img :src="thumbnail" />
