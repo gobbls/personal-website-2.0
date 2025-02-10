@@ -13,7 +13,7 @@ const isOffcanvas = props.position === 'offcanvas';
 
 
 <template>
-  <div :class="{ navHorizontal: isNavbar, navVertical: isHome | isOffcanvas }">
+  <div :class="{ navHorizontal: isNavbar, navVertical: isHome || isOffcanvas }">
     <RouterLink to="/" v-if="!isHome">{{ t('navigation.home') }}</RouterLink>
     <RouterLink to="/projects">{{ t('navigation.projects') }}</RouterLink>
     <RouterLink to="/blog">{{ t('navigation.blog') }}</RouterLink>
@@ -64,7 +64,7 @@ div.navVertical > .divider {
   margin: 20px 0;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 599px) {
   div.navHorizontal {
     display: none;
   }

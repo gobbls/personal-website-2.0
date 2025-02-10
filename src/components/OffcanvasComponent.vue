@@ -1,5 +1,5 @@
 <script setup>
-import HomeNavigationComponent from '@/components/HomeNavigationComponent.vue';
+import NavigationComponent from '@/components/NavigationComponent.vue';
 </script>
 
 
@@ -9,11 +9,12 @@ import HomeNavigationComponent from '@/components/HomeNavigationComponent.vue';
     <i class="bi bi-list"></i>
   </button>
 
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <!-- <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5> -->
     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     <div class="offcanvas-body flx-center">
-      <HomeNavigationComponent position="offcanvas" />
+      <LanguageSwitcherComponent />
+      <NavigationComponent position="offcanvas" />
     </div>
   </div>
 </template>
@@ -21,15 +22,14 @@ import HomeNavigationComponent from '@/components/HomeNavigationComponent.vue';
 
 <style scoped>
 button.menu-button {
-  top: 20px;
-  left: 20px;
   background-color: transparent;
   border-color: var(--text);
+  margin: 10px;
 }
 
 div.offcanvas {
   border: 1 solid white;
-  border-radius: 0 20px 20px 0;
+  border-radius: 10px 0 0 10px;
   max-width: 200px;
   /*
   background-color: rgba(0, 0, 0, 0.2);

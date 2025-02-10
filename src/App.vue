@@ -12,10 +12,8 @@ const currentRouteName = computed(() => { return route.name; });
 
 
 <template>
-  <header v-if="currentRouteName != 'home'">
+  <header>
     <NavbarComponent />
-  </header>
-  <header v-else>
     <div class="langSwitchHome">
       <LanguageSwitcherComponent />
     </div>

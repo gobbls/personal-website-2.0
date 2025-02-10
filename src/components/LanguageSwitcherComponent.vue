@@ -57,6 +57,12 @@ button.btn:active {
   border-color: transparent;
 }
 
+@media screen and (max-width: 599px) {
+  button.btn {
+    display: none;
+  }
+}
+
 @media (hover: hover) {
   button.btn:hover {
     color: var(--leaf);

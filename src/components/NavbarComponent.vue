@@ -7,9 +7,9 @@ import NavigationComponent from '@/components/NavigationComponent.vue';
 
 <template>
   <div class="navbar">
-    <OffcanvasComponent />
     <NavigationComponent position="navbar" />
     <LanguageSwitcherComponent />
+    <OffcanvasComponent />
   </div>
 </template>
 
