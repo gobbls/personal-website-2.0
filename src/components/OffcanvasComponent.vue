@@ -65,4 +65,11 @@ button.btn-close-white:active {
         background-color: transparent;
     }
 }
+
+/* Mobile coverage to hide offcanvas button when on desktop. */
+@media screen and (min-width: 600px) {
+    button.menu-button {
+        display: none;
+    }
+}
 </style>

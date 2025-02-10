@@ -1,12 +1,14 @@
 <script setup>
 import OffcanvasComponent from '@/components/OffcanvasComponent.vue';
 import LanguageSwitcherComponent from '@/components/LanguageSwitcherComponent.vue';
+import NavigationComponent from '@/components/NavigationComponent.vue';
 </script>
 
 
 <template>
     <div class="navbar">
         <OffcanvasComponent />
+        <NavigationComponent />
         <LanguageSwitcherComponent />
     </div>
 </template>

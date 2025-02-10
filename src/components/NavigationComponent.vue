@@ -1,22 +1,17 @@
-<!-- 
-    TODO:
-    - Figure out how to close offcanvas AFTER clicking a router link.
-    - Change offcanvas width. 
--->
-
 <script setup>
+import HomeNavigationComponent from '@/components/HomeNavigationComponent.vue';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
 </script>
 
+
 <template>
-    <nav class="flx-center">
+    <nav>
         <RouterLink to="/">{{ t('navigation.home') }}</RouterLink>
         <RouterLink to="/projects">{{ t('navigation.projects') }}</RouterLink>
         <RouterLink to="/blog">{{ t('navigation.blog') }}</RouterLink>
         <RouterLink to="/contact">{{ t('navigation.contact') }}</RouterLink>
-        <hr>
         <a href="https://github.com/MiiNK1Y" target="_blank">Github <i class="bi bi-box-arrow-up-right"></i></a>
         <a href="Aleksander_N.Knoph_CV.pdf" target="_blank">CV <i class="bi bi-box-arrow-up-right"></i></a>
     </nav>
@@ -24,24 +19,21 @@ const { t } = useI18n();
 
 
 <style scoped>
-hr {
-    height: 2px;
-    width: 100%;
-    color: var(--text);
-}
-
 nav {
-    flex-direction: column;
+  display: flex;
+  margin-right: auto;
+  margin-left: 5px;
 }
 
 nav a {
-    font-size: 1.5em;
     text-decoration: none;
-    text-shadow: 0px 0px 30px black,
-        0px 0px 30px black;
+    color: var(--text);
+    margin: 0 10px;
 }
 
-nav a.router-link-exact-active {
-    color: var(--text);
+@media screen and (max-width: 600px) {
+    nav {
+        display: none;
+    }
 }
 </style>
