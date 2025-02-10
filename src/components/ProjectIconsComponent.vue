@@ -19,7 +19,7 @@ const icon = (key) => {
 <template>
     <div class="icons flx-center">
         <div class="icons-shadow"></div>
-        <div class="icon" v-for="(value, key) in links">
+        <div class="icon" v-for="(value, key) in links" :key="key">
             <a tabindex="-1" :href="links[key]" target="_blank"><img :src="icon(key)" /></a>
             <div class="hover-bar"></div>
         </div>

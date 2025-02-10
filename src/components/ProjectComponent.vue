@@ -48,7 +48,7 @@ const bsIcon = (platform) => {
             <ProjectIconsComponent :links="links" />
             <div class="made-for flx-center">
                 <span>{{ t('page.projects.madeFor') }}</span>
-                <div class="platform" v-for="platform in madeFor">
+                <div class="platform" v-for="platform in madeFor" :key="platform">
                     <span :class="bsIcon(platform)"></span>
                     {{ platform }}
                 </div>
@@ -89,8 +89,8 @@ div.made-for {
     max-width: 85%;
     border-radius: 7px;
     padding: 2px;
-    background-color: white;
-    color: black;
+    background-color: var(--text);
+    color: var(--base);
     text-align: center;
     text-wrap: nowrap;
     transition: transform ease var(--hover-on-phase);
@@ -105,8 +105,8 @@ div.platform {
     border-radius: 6px;
     padding: 3px 7px;
     margin: 2px;
-    background-color: black;
-    color: white;
+    background-color: var(--overlay);
+    color: var(--text);
 }
 
 @media screen and (min-width: 1280px) {

@@ -6,22 +6,21 @@ import NavigationComponent from '@/components/NavigationComponent.vue';
 
 
 <template>
-    <div class="navbar">
-        <OffcanvasComponent />
-        <NavigationComponent position="navbar" />
-        <LanguageSwitcherComponent />
-    </div>
+  <div class="navbar">
+    <OffcanvasComponent />
+    <NavigationComponent position="navbar" />
+    <LanguageSwitcherComponent />
+  </div>
 </template>
 
 
 <style scoped>
 div.navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    flex-wrap: nowrap;
-    padding: 5px;
-    background-color: var(--leaf);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  flex-wrap: nowrap;
+  padding: 2px;
 }
 </style>

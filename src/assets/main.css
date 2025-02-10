@@ -3,6 +3,7 @@
 a {
   color: var(--link-text);
   transition: color ease-in-out var(--hover-on-phase);
+  text-decoration: none;
 }
 
 #app {

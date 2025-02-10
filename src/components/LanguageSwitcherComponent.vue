@@ -37,22 +37,37 @@ const { t } = useI18n();
 
 <style scoped>
 button.btn {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
+  border-color: transparent;
+  transition: color ease-in-out var(--hover-on-phase);
 }
 
 ul.dropdown-menu {
-    min-width: fit-content;
-    padding: 7px;
-    background-color: var(--base);
-    font-size: 1.2rem;
+  min-width: fit-content;
+  padding: 7px;
+  background-color: var(--base);
+  font-size: 1.2rem;
 }
 
-a.dropdown-item:hover {
+a.dropdown-item {
+  transition: none;
+}
+
+button.btn:active {
+  border-color: transparent;
+}
+
+@media (hover: hover) {
+  button.btn:hover {
+    color: var(--leaf);
+  }
+
+  a.dropdown-item:hover {
     border-radius: 5px;
-    background-color: var(--text);
+    background-color: var(--leaf);
     color: var(--base);
-    text-shadow: 0 0 10px black;
     cursor: pointer;
     user-select: none;
+  }
 }
 </style>

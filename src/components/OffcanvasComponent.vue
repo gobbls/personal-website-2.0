@@ -13,7 +13,7 @@ import HomeNavigationComponent from '@/components/HomeNavigationComponent.vue';
         <!-- <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5> -->
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         <div class="offcanvas-body flx-center">
-            <HomeNavigationComponent />
+            <HomeNavigationComponent position="offcanvas" />
         </div>
     </div>
 </template>
@@ -31,11 +31,12 @@ div.offcanvas {
     border: 1 solid white;
     border-radius: 0 20px 20px 0;
     max-width: 200px;
+    /*
     background-color: rgba(0, 0, 0, 0.2);
+    */
+    background-color: var(--base);
     color: var(--text);
     text-align: center;
-    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1),
-        inset 0 0 150px rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(7px);
 }
 

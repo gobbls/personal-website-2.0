@@ -1,5 +1,5 @@
 <template>
-  <div class="profile">
+  <div>
     <h1>Aleksander N. Knoph</h1>
     <p><i>"We're all <s>&nbsp;mad&nbsp;</s> minimalist here."<br>- the Cheshire Cat, probably...</i></p>
   </div>
