@@ -4,5 +4,5 @@ import ProjectsContainerComponent from '@/components/ProjectsContainerComponent.
 
 
 <template>
-    <ProjectsContainerComponent />
+  <ProjectsContainerComponent />
 </template>

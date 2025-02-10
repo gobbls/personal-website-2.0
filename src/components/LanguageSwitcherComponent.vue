@@ -21,17 +21,17 @@ const { t } = useI18n();
 
 
 <template>
-    <div class="language-switch dropdown" data-bs-theme="dark">
-        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButtonDark" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            <i class="bi bi-globe"></i>
-            {{ t('language') }}
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonDark">
-            <li><a class="dropdown-item" @click="setLanguage('en')">English</a></li>
-            <li><a class="dropdown-item" @click="setLanguage('no')">Norsk</a></li>
-        </ul>
-    </div>
+  <div class="language-switch dropdown" data-bs-theme="dark">
+    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButtonDark" data-bs-toggle="dropdown"
+      aria-expanded="false">
+      <i class="bi bi-globe"></i>
+      {{ t('language') }}
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonDark">
+      <li><a class="dropdown-item" @click="setLanguage('en')">English</a></li>
+      <li><a class="dropdown-item" @click="setLanguage('no')">Norsk</a></li>
+    </ul>
+  </div>
 </template>
 
 

@@ -14,7 +14,7 @@ const projects = ref(json);
 
 <template>
     <div class="projects-wrapper flx-center">
-        <div v-for="data in projects">
+        <div v-for="data in projects" :key="data">
             <ProjectComponent
                 :title="data.title"
                 :type="t(`page.projects.project.${data.title}.type`)"

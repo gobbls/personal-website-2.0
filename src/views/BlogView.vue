@@ -4,5 +4,5 @@
 
 
 <template>
-    Blog View
+  Blog View
 </template>

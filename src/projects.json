@@ -1,32 +1,32 @@
 [
-    {
-        "title": "AKSOSPM",
-        "type": "work",
-        "thumbnail": "projects/AKSOSPM.png",
-        "links": {
-            "download": "https://github.com/MiiNK1Y/akso-sn-po-merger/archive/refs/heads/main.zip",
-            "github": "https://github.com/MiiNK1Y/akso-sn-po-merger",
-            "info": "https://github.com/MiiNK1Y/akso-sn-po-merger/wiki"
-        }
-    },
-    {
-        "title": "Firefox Bookmark Scraper",
-        "type": "personal",
-        "thumbnail": "projects/Firefox-bookmark-scraper.png",
-        "links": {
-            "download": "https://github.com/MiiNK1Y/firefox-bookmark-scraper/archive/refs/tags/v1.zip",
-            "github": "https://github.com/MiiNK1Y/firefox-bookmark-scraper",
-            "info": "https://github.com/MiiNK1Y/firefox-bookmark-scraper/blob/main/README.md"
-        }
-    },
-    {
-        "title": "Rock Paper Scissors",
-        "type": "excercise",
-        "thumbnail": "projects/Rock-paper-scissors.png",
-        "links": {
-            "visit": "https://miink1y.github.io/personal-website/projects/Rock-paper-scissors/index.html",
-            "github": "https://github.com/MiiNK1Y/javascript-practice/tree/main/javascript_from_beginner_to_professional/rockPaperScissorsGame",
-            "info": "https://github.com/MiiNK1Y/javascript-practice/blob/main/javascript_from_beginner_to_professional/rockPaperScissorsGame/README.md"
-        }
+  {
+    "title": "AKSOSPM",
+    "type": "work",
+    "thumbnail": "projects/AKSOSPM.png",
+    "links": {
+      "download": "https://github.com/MiiNK1Y/akso-sn-po-merger/archive/refs/heads/main.zip",
+      "github": "https://github.com/MiiNK1Y/akso-sn-po-merger",
+      "info": "https://github.com/MiiNK1Y/akso-sn-po-merger/wiki"
     }
+  },
+  {
+    "title": "Firefox Bookmark Scraper",
+    "type": "personal",
+    "thumbnail": "projects/Firefox-bookmark-scraper.png",
+    "links": {
+      "download": "https://github.com/MiiNK1Y/firefox-bookmark-scraper/archive/refs/tags/v1.zip",
+      "github": "https://github.com/MiiNK1Y/firefox-bookmark-scraper",
+      "info": "https://github.com/MiiNK1Y/firefox-bookmark-scraper/blob/main/README.md"
+    }
+  },
+  {
+    "title": "Rock Paper Scissors",
+    "type": "excercise",
+    "thumbnail": "projects/Rock-paper-scissors.png",
+    "links": {
+      "visit": "https://miink1y.github.io/personal-website/projects/Rock-paper-scissors/index.html",
+      "github": "https://github.com/MiiNK1Y/javascript-practice/tree/main/javascript_from_beginner_to_professional/rockPaperScissorsGame",
+      "info": "https://github.com/MiiNK1Y/javascript-practice/blob/main/javascript_from_beginner_to_professional/rockPaperScissorsGame/README.md"
+    }
+  }
 ]
