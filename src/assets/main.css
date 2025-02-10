@@ -1,29 +1,32 @@
 @import "./base.css";
 
-#app {
-    margin: 4rem 1rem;
+a {
+  color: var(--link-text);
+  transition: color ease-in-out var(--hover-on-phase);
 }
 
-.default-button {
-    width: fit-content;
-    border: 2px solid var(--text);
-    border-radius: 1em;
-
-    padding: 8px;
-    margin: 5px;
-
-    background-color: transparent;
-    color: var(--text);
+#app {
+  margin: 4rem 1rem;
 }
 
 .flx-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (hover: hover) {
+  a:hover {
+    color: var(--iris);
+  }
+
+  a.external:hover {
+    color: var(--love);
+  }
 }
 
 @media screen and (max-width: 700px) {
-    #app {
-        margin-top: 4rem;
-    }
+  #app {
+    margin-top: 4rem;
+  }
 }

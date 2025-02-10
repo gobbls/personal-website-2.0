@@ -8,7 +8,7 @@ import NavigationComponent from '@/components/NavigationComponent.vue';
 <template>
     <div class="navbar">
         <OffcanvasComponent />
-        <NavigationComponent />
+        <NavigationComponent position="navbar" />
         <LanguageSwitcherComponent />
     </div>
 </template>
@@ -22,6 +22,6 @@ div.navbar {
     right: 0;
     flex-wrap: nowrap;
     padding: 5px;
-    background-color: darkslategray;
+    background-color: var(--leaf);
 }
 </style>

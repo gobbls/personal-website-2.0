@@ -5,6 +5,6 @@ import HomeNavigationComponent from '@/components/HomeNavigationComponent.vue';
 
 
 <template>
-    <ProfileComponent />
-    <HomeNavigationComponent />
+  <ProfileComponent />
+  <HomeNavigationComponent />
 </template>
