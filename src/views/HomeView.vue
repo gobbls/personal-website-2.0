@@ -29,4 +29,9 @@ div.navigation-wrapper :deep(.divider) {
   height: 1px;
   margin: 20px 0;
 }
+
+/* Hide 'Home' (the first navigation-element) from the home-navigation */
+div.navigation-wrapper :deep(.navigation a:first-child) {
+  display: none;
+}
 </style>

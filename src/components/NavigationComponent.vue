@@ -1,7 +1,9 @@
 <script setup>
 import { useI18n } from 'vue-i18n';
+import { useRoute } from 'vue-router';
 
 const { t } = useI18n();
+const route = useRoute();
 </script>
 
 
@@ -10,9 +12,7 @@ const { t } = useI18n();
     <RouterLink to="/">{{ t('navigation.home') }}</RouterLink>
     <RouterLink to="/projects">{{ t('navigation.projects') }}</RouterLink>
     <RouterLink to="/blog">{{ t('navigation.blog') }}</RouterLink>
-
     <div class="divider"></div>
-
     <a class="external" href="https://github.com/MiiNK1Y" target="_blank">Github</a>
     <a class="external" href="Aleksander_N.Knoph_CV.pdf" target="_blank">CV</a>
   </div>
@@ -30,6 +30,15 @@ div.navigation {
   margin-left: 10px;
   margin-right: auto;
   gap: 10px;
+  font-size: 1.2em;
+}
+
+div.navigation a {
+  padding: 0 10px;
+}
+
+div.navigation a.router-link-exact-active {
+  color: var(--rose);
 }
 
 div.divider {

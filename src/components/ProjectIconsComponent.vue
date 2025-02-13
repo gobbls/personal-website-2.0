@@ -67,7 +67,7 @@ div.hover-bar {
 }
 
 /* Cursor-specific devices */
-@media (hover: hover) and (pointer: fine) {
+@media (hover: hover) and (any-pointer: fine) {
 
   /* Override Bootstrap link-opacity */
   a:hover {
@@ -91,7 +91,7 @@ div.hover-bar {
 }
 
 /* Mobile coverage. */
-@media (hover: none) and (any-pointer: coarse) {
+@media (hover: none) and (pointer: coarse) {
   div.content:focus-within .icons {
     opacity: 1;
     pointer-events: auto;

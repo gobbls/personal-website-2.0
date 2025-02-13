@@ -123,7 +123,7 @@ div.platform {
 }
 
 /* Cursor-specific devices */
-@media (hover: hover) and (pointer: fine) {
+@media (hover: hover) and (any-pointer: fine) {
   div.content:hover>img {
     filter: blur(5px);
   }
@@ -134,7 +134,7 @@ div.platform {
 }
 
 /* Mobile coverage. */
-@media (hover: none) and (any-pointer: coarse) {
+@media (hover: none) and (pointer: coarse) {
   div.content:focus-within>img {
     filter: blur(5px);
   }

@@ -7,7 +7,7 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute();               // Use the functionality given by the router.
 const wWidth = ref(window.innerWidth);  // Set the current width of the window / viewport, made reactive.
-const breakpoint = 500; // px           // The point from which the component is shown.
+const breakpoint = 600; // px           // The point from which the component is shown.
 const hideFromRoute = '/';              // The route where to hide components, even if the width is met.
 
 // Replace old window width with new one.
@@ -28,8 +28,11 @@ onMounted(() => {
       <NavigationComponent />
       <LanguageSwitcherComponent />
     </div>
-    <div class="offcanvas-menu" v-else>
+    <div class="offcanvas-menu" v-else-if="route.path != hideFromRoute">
       <TheOffcanvasComponent />
+    </div>
+    <div class="languageswitch-only" v-else>
+      <LanguageSwitcherComponent />
     </div>
   </div>
 </template>
@@ -41,7 +44,7 @@ div.navbar {
   top: 0;
   left: 0;
   right: 0;
-  padding: 0;
+  padding: 5px;
   flex-wrap: nowrap;
 }
 
@@ -53,6 +56,11 @@ div.sub-navbar {
 }
 
 div.offcanvas-menu {
+  margin-left: auto;
+}
+
+div.languageswitch-only {
+  margin: 10px;
   margin-left: auto;
 }
 </style>

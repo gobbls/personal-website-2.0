@@ -44,12 +44,14 @@ div.language-switch {
 button.btn {
   border-color: transparent;
   transition: none;
+  font-size: 1.2em;
 }
 
 ul.dropdown-menu {
   min-width: fit-content;
   padding: 7px;
   background-color: var(--base);
+  font-size: 1.2em;
 }
 
 a.dropdown-item {
@@ -61,8 +63,12 @@ button.btn:active {
   border-color: transparent;
 }
 
+a.dropdown-item:active {
+  background-color: var(--leaf);
+}
+
 /* Active, if hover does not work.*/
-@media (hover: none) {
+@media (hover: none) and (pointer: coarse) {
   button.btn:active {
     color: var(--leaf);
   }
@@ -72,13 +78,12 @@ button.btn:active {
     border-radius: 5px;
     background-color: var(--leaf);
     color: var(--base);
-    cursor: pointer;
     user-select: none;
   }
 }
 
 /* Hover stuff for devices with a cursor. */
-@media (hover: hover) and (pointer: fine) {
+@media (hover: hover) and (any-pointer: fine) {
   button.btn:hover {
     color: var(--leaf);
   }

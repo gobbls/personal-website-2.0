@@ -6,12 +6,11 @@ import LanguageSwitcherComponent from '@/components/LanguageSwitcherComponent.vu
 
 <template>
   <button class="menu-button btn btn-primary" type="button" data-bs-toggle="offcanvas"
-    data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+    data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
     <i class="bi bi-list"></i>
   </button>
-
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-    <!-- <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5> -->
+  <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+    aria-labelledby="offcanvasWithBothOptionsLabel">
     <div class="offcanvas-body">
       <div class="offcanvas-header">
         <LanguageSwitcherComponent />
@@ -29,6 +28,12 @@ button.menu-button {
   border-color: var(--text);
   margin: 10px;
   margin-left: auto;
+}
+
+button.menu-button:active {
+  background-color: var(--leaf);
+  border-color: transparent;
+  transition: none;
 }
 
 div.offcanvas {
@@ -63,11 +68,11 @@ button.btn-close-white {
 
 button.btn-close-white:active {
   box-shadow: none;
+  opacity: 0.8;
 }
 
-@media (hover :hover) and (pointer: fine) {
+@media (hover :hover) and (any-pointer: fine) {
   button.btn-close-white:hover {
-    border: 2px solid black;
     background-color: transparent;
   }
 }
