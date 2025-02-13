@@ -69,7 +69,7 @@ div.hover-bar {
 /* Cursor-specific devices */
 @media (hover: hover) and (pointer: fine) {
 
-    /* Override Bootstrap link-opacity */
+  /* Override Bootstrap link-opacity */
   a:hover {
     opacity: 1;
   }

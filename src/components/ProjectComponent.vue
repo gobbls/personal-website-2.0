@@ -1,6 +1,6 @@
 <script setup>
-import { useI18n } from 'vue-i18n';
 import ProjectIconsComponent from '@/components/ProjectIconsComponent.vue';
+import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
 
@@ -102,7 +102,7 @@ div.platform {
 
 @media screen and (min-width: 1280px) {
   div.title {
-    white-space:nowrap;
+    white-space: nowrap;
   }
 }
 

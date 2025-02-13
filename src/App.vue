@@ -1,33 +1,29 @@
-<script setup>
-import { computed } from 'vue';
-import { RouterView, useRoute } from 'vue-router';
-import NavbarComponent from '@/components/NavbarComponent.vue';
-import LanguageSwitcherComponent from '@/components/LanguageSwitcherComponent.vue';
+<!--
+  FIX:
+  - Fix language button in offcanvas.
+  - Fix navbar showing on home.
+  - Fix offcanvas not closing after clicking on route / link.
+  - Fix project icons 'reloading' when getting back from a different tab / window.
+  TODO:
+  - Add back-button and 'current-page / path' -name beside said button for navigation hint.
+  - Add profile-picture fading in when hovering over name on homescreen.
+  - Add blog components.
+    - Figure out best way to go about the template format for writing (markdown parser?).
+  - General cleanup in codebase.
+-->
 
-const route = useRoute();
-// Get the name of the current route.
-// We don't want to show the navigationbar on the homepage (only).
-const currentRouteName = computed(() => { return route.name; });
+
+<script setup>
+import TheNavbarComponent from '@/components/TheNavbarComponent.vue';
+import { RouterView } from 'vue-router';
 </script>
 
 
 <template>
   <header>
-    <NavbarComponent />
-    <div class="langSwitchHome">
-      <LanguageSwitcherComponent />
-    </div>
+    <TheNavbarComponent />
   </header>
   <main>
     <RouterView />
   </main>
 </template>
-
-
-<style scoped>
-.langSwitchHome {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-}
-</style>

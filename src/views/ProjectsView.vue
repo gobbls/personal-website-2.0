@@ -1,8 +1,8 @@
 <script setup>
-import ProjectsContainerComponent from '@/components/ProjectsContainerComponent.vue'
+import TheProjectsContainerComponent from '@/components/TheProjectsContainerComponent.vue';
 </script>
 
 
 <template>
-  <ProjectsContainerComponent />
+  <TheProjectsContainerComponent />
 </template>

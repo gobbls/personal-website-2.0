@@ -1,5 +1,6 @@
 <script setup>
 import NavigationComponent from '@/components/NavigationComponent.vue';
+import LanguageSwitcherComponent from '@/components/LanguageSwitcherComponent.vue';
 </script>
 
 
@@ -11,10 +12,12 @@ import NavigationComponent from '@/components/NavigationComponent.vue';
 
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <!-- <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5> -->
-    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    <div class="offcanvas-body flx-center">
-      <LanguageSwitcherComponent />
-      <NavigationComponent position="offcanvas" />
+    <div class="offcanvas-body">
+      <div class="offcanvas-header">
+        <LanguageSwitcherComponent />
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <NavigationComponent />
     </div>
   </div>
 </template>
@@ -25,33 +28,35 @@ button.menu-button {
   background-color: transparent;
   border-color: var(--text);
   margin: 10px;
+  margin-left: auto;
 }
 
 div.offcanvas {
-  border: 1 solid white;
   border-radius: 10px 0 0 10px;
   max-width: 200px;
-  /*
-  background-color: rgba(0, 0, 0, 0.2);
-  */
   background-color: var(--base);
   color: var(--text);
-  text-align: center;
-  backdrop-filter: blur(7px);
+}
+
+div.offcanvas-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
 }
 
 div.offcanvas-body {
-  height: 100%;
-  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 button.btn-close-white {
-  position: absolute;
-  top: 0;
-  right: 0;
   border: 2px solid transparent;
   border-radius: 2em;
-  margin: 10px;
   opacity: 1;
   box-shadow: none;
 }
@@ -60,17 +65,30 @@ button.btn-close-white:active {
   box-shadow: none;
 }
 
-@media (hover :hover) {
+@media (hover :hover) and (pointer: fine) {
   button.btn-close-white:hover {
     border: 2px solid black;
     background-color: transparent;
   }
 }
 
-/* Mobile coverage to hide offcanvas button when on desktop. */
-@media screen and (min-width: 600px) {
-  button.menu-button {
-    display: none;
-  }
+/* Styling of child elements in this component */
+div.offcanvas-body :deep(.navigation) {
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  text-align: right;
+  font-size: 1.5em;
+}
+
+div.offcanvas-body :deep(.divider) {
+  width: 100%;
+  height: 1px;
+  margin: 20px 0;
+}
+
+div.offcanvas-body :deep(.language-switch.dropdown) {
+  margin-left: 0;
+  margin-right: auto;
 }
 </style>
