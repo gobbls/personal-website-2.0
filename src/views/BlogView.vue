@@ -1,3 +1,8 @@
+<script setup>
+import TheBlogContainerComponent from "@/components/TheBlogContainerComponent.vue";
+</script>
+
+
 <template>
-  Blog View
+  <TheBlogContainerComponent />
 </template>
