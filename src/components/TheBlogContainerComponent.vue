@@ -2,7 +2,8 @@
 import BlogPostPreviewComponent from "@/components/BlogPostPreviewComponent.vue"
 import { ref, onMounted } from 'vue';
 
-const allPostsApiEndpoint = "http://localhost:5000/blog/api/AllBlogPostsData";
+const apiEndpoint = "http://localhost:8000/";
+const allPostsApiEndpoint = apiEndpoint + "blog/all_posts";
 
 const loading = ref(true);
 const json = ref(null);
@@ -29,17 +30,25 @@ onMounted(() => {
 
 <template>
   <div v-if="loading">loading posts...</div>
-  <div v-else="json">
+  <div class="container" v-else="json">
     <div v-for="property in json" :key="property">
-      <BlogPostPreviewComponent
-        :title="property['title']"
-        :tags="property['tags']"
-        :dateOfPosting="property['date-of-posting']"
-        :dateOfLastEdit="property['date-of-last-edit']"
-        :description="property['description']"
-        :postUrl="property['post-url']"
-        :prevImgUrl="property['prev-img-url']"
-      />
+      {{ console.log(property) }}
+      <BlogPostPreviewComponent :title="property['title']" :tags="property['tags']"
+        :dateOfPosting="property['date-of-posting']" :dateOfLastEdit="property['date-of-last-edit']"
+        :description="property['description']" :postUrl="property['post-url']"
+        :prevImgUrl="apiEndpoint + property['preview-img-url']" />
     </div>
   </div>
 </template>
+
+
+<style scoped>
+div.container {
+  display: grid;
+  grid-template-rows: repeat(auto);
+  row-gap: 1px;
+  padding: 0;
+  margin: 0 10px;
+  background-color: hsl(186 50% 90% / 1);
+}
+</style>
