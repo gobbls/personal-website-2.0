@@ -10,14 +10,19 @@ const props = defineProps({
   postUrl: String,
   prevImgUrl: String
 });
+
 </script>
 
 
 <template>
   <div class="single-preview">
+<<<<<<< HEAD
     <RouterLink :to="{ name: 'destination.show', params: { post: postUrl } }">
       <img :src="prevImgUrl" />
     </RouterLink>
+=======
+    <a :href="postUrl"><img :src="prevImgUrl" /></a>
+>>>>>>> 1e40241f23859fbbde479dbf71d70dc9f0ce8b21
     <div>
       <h2 class="title">{{ title }}</h2>
       <BlogPostTagsComponent :tags="tags" />
