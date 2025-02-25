@@ -1,48 +1,42 @@
 <script setup>
 import BlogPostPreviewComponent from "@/components/BlogPostPreviewComponent.vue"
 import { ref, onMounted } from 'vue';
-import { backend } from '../main.js';
+import { blogBackendHost, blogBackend } from '../main.js';
 
-const loading = ref(true);
+const blogPostsEndpoint = blogBackend.endpoints.allPosts;
+const blogPostsFetchErrorMsg = "Failed to fetch posts, the blog server might be down.";
 const json = ref(null);
 
-async function getBlogPostsJson() {
+const getBlogPosts = async () => {
   try {
-    const response = await fetch(backend.allPostsApiEndpoint);
+    const response = await fetch(blogPostsEndpoint);
     if (response.ok) {
       json.value = await response.json();
-      loading.value = false;
     } else {
-      json.value = "failed to fetch posts";
+      json.value = blogPostsFetchErrorMsg;
     }
   } catch (error) {
     console.error("Error:", error);
   }
 }
-
-onMounted(() => {
-  getBlogPostsJson();
-})
-
-
+onMounted(() => { getBlogPosts(); });
 </script>
 
 
 <template>
-  <div v-if="loading">loading posts...</div>
-  <div class="container" v-else="json">
-    <div v-for="property in json" :key="property">
-      {{ console.log(property) }}
-      <BlogPostPreviewComponent
-        :title="property['title']"
-        :postUrl="property['post-url']"
-        :tags="property['tags']"
-        :dateOfPosting="property['date-of-posting']"
-        :dateOfLastEdit="property['date-of-last-edit']"
-        :description="property['description']"
-        :prevImgUrl="backend.apiEndpoint + property['preview-img-url']"
-      />
-    </div>
+  <div class="container" v-if="json" v-for="property in json" :key="property">
+    <BlogPostPreviewComponent
+      :title="property['title']"
+      :postUrl="property['post-url']"
+      :tags="property['tags']"
+      :dateOfPosting="property['date-of-posting']"
+      :dateOfLastEdit="property['date-of-last-edit']"
+      :description="property['description']"
+      :prevImgUrl="blogBackendHost + property['preview-img-url']"
+    />
+  </div>
+  <div v-else>
+    <h3>loading posts...</h3>
   </div>
 </template>
 
