@@ -21,12 +21,14 @@ const fTags = props.tags.split(",");
 div.tags {
   display: flex;
   gap: 5px;
+  padding: 10px 0;
 }
 
 .tags div {
-  padding: 2px 7px;
+  padding: 0 7px;
   border-radius: 3em;
-  background-color: var(--text);
+  background-color: var(--muted);
   color: var(--base);
+  font-size: 0.9em;
 }
 </style>

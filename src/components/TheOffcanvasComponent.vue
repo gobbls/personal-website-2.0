@@ -26,7 +26,6 @@ import LanguageSwitcherComponent from '@/components/LanguageSwitcherComponent.vu
 button.menu-button {
   background-color: transparent;
   border-color: var(--text);
-  margin: 10px;
   margin-left: auto;
 }
 

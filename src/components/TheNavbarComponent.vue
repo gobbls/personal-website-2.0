@@ -24,6 +24,7 @@ onMounted(() => {
 
 <template>
   <div class="navbar">
+    <RouterLink to="/"><img src="../assets/logo.png" /></RouterLink>
     <div class="sub-navbar" v-if="breakpoint < wWidth && route.path != hideFromRoute">
       <NavigationComponent />
       <LanguageSwitcherComponent />
@@ -44,8 +45,12 @@ div.navbar {
   top: 0;
   left: 0;
   right: 0;
-  padding: 5px;
+  padding: 15px;
   flex-wrap: nowrap;
+}
+
+div.navbar img {
+  max-width: 45px;
 }
 
 div.sub-navbar {
@@ -60,7 +65,6 @@ div.offcanvas-menu {
 }
 
 div.languageswitch-only {
-  margin: 10px;
   margin-left: auto;
 }
 </style>

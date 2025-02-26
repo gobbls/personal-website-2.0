@@ -15,16 +15,14 @@ const props = defineProps({
 
 <template>
   <div class="single-preview">
-    <RouterLink :to="{ name: 'destination.show', params: { post: postUrl } }">
+    <RouterLink class="wrapper" :to="{ name: 'destination.show', params: { post: postUrl } }">
       <img :src="prevImgUrl" />
     </RouterLink>
     <div>
       <h2 class="title">{{ title }}</h2>
+      <span class="dateOfPosting"><i class="bi bi-calendar"></i> {{ dateOfPosting }}</span>
+      <span class="dateOfLastEdit" v-if="dateOfLastEdit"> / <span>{{ dateOfLastEdit }}</span></span>
       <BlogPostTagsComponent :tags="tags" />
-      <div>
-        <span class="dateOfPosting">Posted: {{ dateOfPosting }}</span>
-        <span class="dateOfLastEdit">Updated: {{ dateOfLastEdit }}</span>
-      </div>
       <div class="description">{{ description }}</div>
     </div>
   </div>
@@ -33,9 +31,11 @@ const props = defineProps({
 
 <style scoped>
 div.single-preview {
-  display: grid;
-  grid-template-columns: auto auto;
-  padding: 30px;
+  display: flex;
+  padding: 30px 0;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 10px;
   background-color: var(--base);
   color: var(--text);
   opacity: 1;
@@ -45,14 +45,52 @@ div.single-preview div {
   margin: auto 0;
 }
 
-a img {
-  max-width: 200px;
-  max-height: 200px;
+h2 {
+  margin-bottom: 10px;
 }
 
-div.tags {
-  width: fit-content;
-  background-color: var(--base);
-  color: var(--text);
+/*
+*a {
+*  display: flex;
+*  place-items: center;
+*}
+*/
+
+img {
+  max-width: 200px;
+  border-radius: 1em;
+}
+
+span.dateOfLastEdit span {
+  color: var(--leaf)
+}
+
+.dateOfPosting,
+.dateOfLastEdit,
+.description {
+  opacity: 0.7;
+}
+
+div.description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -moz-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 500px) {
+  div.single-preview {
+    flex-wrap: wrap;
+  }
+
+  a.wrapper {
+    width: 100%;
+  }
+
+  img {
+    max-width: none;
+    width: 100%;
+  }
 }
 </style>

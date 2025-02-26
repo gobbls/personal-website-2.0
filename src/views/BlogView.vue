@@ -24,16 +24,18 @@ onMounted(() => { getBlogPosts(); });
 
 
 <template>
-  <div class="container" v-if="json" v-for="property in json" :key="property">
-    <BlogPostPreviewComponent
-      :title="property['title']"
-      :postUrl="property['post-url']"
-      :tags="property['tags']"
-      :dateOfPosting="property['date-of-posting']"
-      :dateOfLastEdit="property['date-of-last-edit']"
-      :description="property['description']"
-      :prevImgUrl="blogBackendHost + property['preview-img-url']"
-    />
+  <div class="container" v-if="json">
+    <div v-for="property in json" :key="property">
+      <BlogPostPreviewComponent
+        :title="property['title']"
+        :postUrl="property['post-url']"
+        :tags="property['tags']"
+        :dateOfPosting="property['date-of-posting']"
+        :dateOfLastEdit="property['date-of-last-edit']"
+        :description="property['description']"
+        :prevImgUrl="blogBackendHost + property['preview-img-url']"
+      />
+    </div>
   </div>
   <div v-else>
     <h3>loading posts...</h3>
@@ -46,8 +48,8 @@ div.container {
   display: grid;
   grid-template-rows: repeat(auto);
   row-gap: 1px;
+  max-width: 900px;
   padding: 0;
-  margin: 0 10px;
   background-color: hsl(186 50% 90% / 1);
 }
 </style>
