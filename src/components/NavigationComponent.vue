@@ -26,7 +26,6 @@ const { t } = useI18n();
 div.navigation {
   display: flex;
   flex-direction: row;
-  margin-left: 10px;
   margin-right: auto;
   gap: 10px;
   font-size: 1.2em;

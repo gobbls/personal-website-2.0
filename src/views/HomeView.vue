@@ -5,6 +5,9 @@ import NavigationComponent from '@/components/NavigationComponent.vue';
 
 
 <template>
+  <div class="mask">
+    <img src="../assets/logo.png" />
+  </div>
   <TheProfileComponent />
   <div class="navigation-wrapper">
     <NavigationComponent />
@@ -13,6 +16,20 @@ import NavigationComponent from '@/components/NavigationComponent.vue';
 
 
 <style scoped>
+div.mask {
+  z-index: -1;
+  text-align: center;
+  max-width: 400px;
+  margin-top: -100px;
+  margin-bottom: -200px;
+  opacity: 0.3;
+  mask-image: linear-gradient(var(--base), transparent);
+}
+
+img {
+  max-width: 100%;
+}
+
 /* Styling child component of this component */
 div.navigation-wrapper :deep(.navigation) {
   display: flex;
@@ -20,6 +37,7 @@ div.navigation-wrapper :deep(.navigation) {
 }
 
 div.navigation-wrapper :deep(a) {
+  z-index: 1;
   font-size: 1.5em;
   text-align: center;
 }

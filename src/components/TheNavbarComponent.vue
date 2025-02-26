@@ -24,7 +24,7 @@ onMounted(() => {
 
 <template>
   <div class="navbar">
-    <RouterLink to="/"><img src="../assets/logo.png" /></RouterLink>
+    <RouterLink v-if="route.path != hideFromRoute" to="/"><img src="../assets/logo.png" /></RouterLink>
     <div class="sub-navbar" v-if="breakpoint < wWidth && route.path != hideFromRoute">
       <NavigationComponent />
       <LanguageSwitcherComponent />
