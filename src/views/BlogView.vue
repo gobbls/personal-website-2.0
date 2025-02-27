@@ -7,7 +7,7 @@ const blogPostsEndpoint = blogBackend.endpoints.allPosts;
 const blogPostsFetchErrorMsg = "Failed to fetch posts, the blog server might be down.";
 const json = ref(null);
 
-const getBlogPosts = async () => {
+const blogPosts = async () => {
   try {
     const response = await fetch(blogPostsEndpoint);
     if (response.ok) {
@@ -19,7 +19,7 @@ const getBlogPosts = async () => {
     console.error("Error:", error);
   }
 }
-onMounted(() => { getBlogPosts(); });
+onMounted(() => { blogPosts(); });
 </script>
 
 
@@ -50,6 +50,6 @@ div.container {
   row-gap: 1px;
   max-width: 900px;
   padding: 0;
-  background-color: hsl(186 50% 90% / 1);
+  background-color: hsl(186 50% 90% / 0.5);
 }
 </style>
