@@ -10,15 +10,9 @@ import router from './router';
 import i18n from './i18n';
 import App from './App.vue';
 
-// WARN:
-// FOR LOCAL DEVELOPMENT ONLY, REPLACE BEFORE BUILD.
-// export const blogBackendHost = "http://localhost:5000/";
-export const blogBackendHost = "http://192.168.1.107:5000/";
-
-// WARN:
-// FOR REGEX REPLACEMENT IN <img> TAGS, FIX BEFORE BUILD.
-// FOR LOCAL DEVELOPMENT ONLY, REPLACE BEFORE BUILD.
-export const localUrl = "http://localhost:5173/";
+// Load data from .env
+export const blogBackendHost = import.meta.env.VITE_BLOG_HOST;
+export const localUrl = import.meta.env.VITE_LOCAL_HOST;
 
 export const blogBackend = {
   // HTML responses
