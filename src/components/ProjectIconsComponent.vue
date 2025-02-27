@@ -3,16 +3,12 @@ const props = defineProps({
   links: Object,
 });
 
-const icon = (key) => {
-  const icons = {
-    visit: "icons/arrow.png",
-    download: "icons/download.png",
-    github: "icons/github.png",
-    info: "icons/information.png"
-  };
-
-  return icons[key];
-}
+const icons = {
+  visit: "icons/arrow.png",
+  download: "icons/download.png",
+  github: "icons/github.png",
+  info: "icons/information.png"
+};
 </script>
 
 
@@ -20,7 +16,7 @@ const icon = (key) => {
   <div class="icons flx-center">
     <div class="icons-shadow"></div>
     <div class="icon" v-for="(value, key) in links" :key="key">
-      <a tabindex="-1" :href="links[key]" target="_blank"><img :src="icon(key)" /></a>
+      <a tabindex="-1" :href="links[key]" target="_blank"><img :src="icons[key]" /></a>
       <div class="hover-bar"></div>
     </div>
   </div>

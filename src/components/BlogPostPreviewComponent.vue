@@ -49,13 +49,6 @@ h2 {
   margin-bottom: 10px;
 }
 
-/*
-*a {
-*  display: flex;
-*  place-items: center;
-*}
-*/
-
 img {
   max-width: 200px;
   border-radius: 1em;

@@ -24,7 +24,7 @@ div.tags {
   padding: 10px 0;
 }
 
-.tags div {
+div.tags div {
   padding: 0 7px;
   border-radius: 3em;
   background-color: var(--muted);

@@ -1,3 +1,10 @@
+<!--
+  TODO:
+  - Fix icons being clickable in Chrome even when the icons
+  are hidden and cursor actions are deactivated.
+-->
+
+
 <script setup>
 import ProjectIconsComponent from '@/components/ProjectIconsComponent.vue';
 import { useI18n } from 'vue-i18n';
