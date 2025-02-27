@@ -22,7 +22,7 @@ div.img-container {
   text-align: center;
 }
 
-img {
+.img-container img {
   max-width: 100vw;
   max-height: 30vh;
 }
@@ -34,6 +34,7 @@ div.navigation-wrapper :deep(.navigation) {
 }
 
 div.navigation-wrapper :deep(a) {
+  /* Avoid logo overlapping hover-functionality */
   z-index: 1;
   font-size: 1.5em;
   text-align: center;
