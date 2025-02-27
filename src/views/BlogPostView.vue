@@ -18,6 +18,10 @@ function fixImageHost() {
 
   for (let i = 0; i < images.length; i++) {
     const fixedUrl = images[i].src.replace(localUrl, blogBackendHost);
+
+    // Ignore site-logo in navbar
+    if (fixedUrl.includes("logo.png")) continue;
+
     images[i].src = fixedUrl;
   }
 }
