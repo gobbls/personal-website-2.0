@@ -23,13 +23,13 @@ function fixImageHost() {
   });
 }
 
-async function getBlogPost() {
+const blogPost = async () => {
   try {
     const response = await fetch(blogPostUrl);
-    if (response.ok) {
-      post.value = await response.text();
-    } else {
+    if (!response.ok) {
       post.value = blogPostFetchErrorMsg;
+    } else {
+      post.value = await response.text();
     }
   } catch (error) {
     console.error("Error:", error);
@@ -39,7 +39,7 @@ async function getBlogPost() {
   await nextTick();
   fixImageHost();
 }
-onMounted(() => { getBlogPost(); });
+onMounted(() => { blogPost(); });
 </script>
 
 

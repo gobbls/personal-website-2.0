@@ -10,10 +10,10 @@ const json = ref(null);
 const blogPosts = async () => {
   try {
     const response = await fetch(blogPostsEndpoint);
-    if (response.ok) {
-      json.value = await response.json();
-    } else {
+    if (!response.ok) {
       json.value = blogPostsFetchErrorMsg;
+    } else {
+      json.value = await response.json();
     }
   } catch (error) {
     console.error("Error:", error);
