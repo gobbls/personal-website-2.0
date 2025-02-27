@@ -5,8 +5,8 @@ import NavigationComponent from '@/components/NavigationComponent.vue';
 
 
 <template>
-  <div class="mask">
-    <img src="../assets/logo.png" />
+  <div class="img-container">
+    <img src="/logo_faded.png" />
   </div>
   <TheProfileComponent />
   <div class="navigation-wrapper">
@@ -16,18 +16,15 @@ import NavigationComponent from '@/components/NavigationComponent.vue';
 
 
 <style scoped>
-div.mask {
-  z-index: -1;
+div.img-container {
+  width: 100%;
+  margin-bottom: -10vh;
   text-align: center;
-  max-width: 400px;
-  margin-top: -100px;
-  margin-bottom: -200px;
-  opacity: 0.3;
-  mask-image: linear-gradient(var(--base), transparent);
 }
 
 img {
-  max-width: 100%;
+  max-width: 100vw;
+  max-height: 30vh;
 }
 
 /* Styling child component of this component */
