@@ -14,16 +14,13 @@ const post = ref(null);
 * new tag: <img src="https://[myBackendServer].com/img/img.png" />
 */
 function fixImageHost() {
-  const images = document.getElementsByTagName("img");
+  // Collect all images inside the '.wrapper' class.
+  const images = document.querySelectorAll(".wrapper img");
 
-  for (let i = 0; i < images.length; i++) {
-    const fixedUrl = images[i].src.replace(localUrl, blogBackendHost);
-
-    // Ignore site-logo in navbar
-    if (fixedUrl.includes("logo.png")) continue;
-
-    images[i].src = fixedUrl;
-  }
+  // Fix the URL for each image / item.
+  images.forEach(img => {
+    img.src = img.src.replace(localUrl, blogBackendHost);
+  });
 }
 
 async function getBlogPost() {
@@ -47,7 +44,7 @@ onMounted(() => { getBlogPost(); });
 
 
 <template>
-  <div v-if="post" v-html="post"></div>
+  <div class="wrapper" v-if="post" v-html="post"></div>
   <div v-else>
     <h3>Loading post...</h3>
   </div>
