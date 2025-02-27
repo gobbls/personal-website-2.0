@@ -7,7 +7,7 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute();               // Use the functionality given by the router.
 const wWidth = ref(window.innerWidth);  // Set the current width of the window / viewport, made reactive.
-const breakpoint = 600; // px           // The point from which the component is shown.
+const breakpoint = 650; // px           // The point from which the component is shown.
 const hideFromRoute = '/';              // The route where to hide components, even if the width is met.
 
 // Replace old window width with new one.
