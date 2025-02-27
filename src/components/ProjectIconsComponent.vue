@@ -1,4 +1,11 @@
 <script setup>
+
+/*
+* TODO:
+* - Chrome has issues with "active" or "hover", making the icons / inks \
+* pressable even when the icons doesnt show.
+*/
+
 const props = defineProps({
   links: Object,
 });
