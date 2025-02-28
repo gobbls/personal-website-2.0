@@ -4,6 +4,8 @@
 * TODO:
 * - Chrome has issues with "active" or "hover", making the icons / inks \
 * pressable even when the icons doesnt show.
+* - Instead of calling the backend API for JSON data every time the component mounts, \
+* find a solution to store the data after the first call and store it until the client leaves
 */
 
 const props = defineProps({
@@ -39,6 +41,7 @@ div.icons {
   margin: 0 30px 20px 30px;
   transition: opacity ease var(--hover-on-phase);
   pointer-events: none;
+  touch-action: none;
 }
 
 div.icon {
@@ -70,7 +73,7 @@ div.hover-bar {
 }
 
 /* Cursor-specific devices */
-@media (hover: hover) and (any-pointer: fine) {
+@media (hover: hover) and (pointer: fine) {
 
   /* Override Bootstrap link-opacity */
   a:hover {
@@ -84,7 +87,6 @@ div.hover-bar {
 
   div.content:hover div.icon {
     max-width: 80px;
-    pointer-events: auto;
   }
 
   div.icon:hover div.hover-bar {
@@ -95,6 +97,18 @@ div.hover-bar {
 
 /* Mobile coverage. */
 @media (hover: none) and (pointer: coarse) {
+  div.content:focus-within .icons {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  div.content.content:focus-within .icon {
+    max-width: 80px;
+  }
+}
+
+/* Mobile CHROME (for some fucking reason supports hover) coverage. */
+@media (hover: hover) and (pointer: coarse) {
   div.content:focus-within .icons {
     opacity: 1;
     pointer-events: auto;
