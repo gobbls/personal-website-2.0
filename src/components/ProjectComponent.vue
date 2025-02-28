@@ -20,17 +20,12 @@ const props = defineProps({
   links: Object,
 });
 
-// Get Bootstrap icons.
-const bsIcon = (platform) => {
-  const icon = {
-    Linux: "bi bi-ubuntu",
-    MacOS: "bi bi-apple",
-    Windows: "bi bi-windows",
-    Browser: "bi bi-browser-firefox",
-    Nettleser: "bi bi-browser-firefox"
-  };
-
-  return icon[platform];
+const icon = {
+  Linux: "bi bi-ubuntu",
+  MacOS: "bi bi-apple",
+  Windows: "bi bi-windows",
+  Browser: "bi bi-browser-firefox",
+  Nettleser: "bi bi-browser-firefox"
 };
 </script>
 
@@ -47,7 +42,7 @@ const bsIcon = (platform) => {
       <div class="made-for flx-center">
         <span>{{ t('page.projects.madeFor') }}</span>
         <div class="platform" v-for="platform in madeFor" :key="platform">
-          <span :class="bsIcon(platform)"></span>
+          <span :class="icon[platform]"></span>
           {{ platform }}
         </div>
       </div>
