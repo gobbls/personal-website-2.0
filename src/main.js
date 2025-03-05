@@ -4,7 +4,6 @@ import router from './router';
 import i18n from './i18n';
 import App from './App.vue';
 
-// Load data from .env
 export const blogBackendHost = import.meta.env.VITE_BLOG_HOST;
 export const localUrl = import.meta.env.VITE_LOCAL_HOST;
 

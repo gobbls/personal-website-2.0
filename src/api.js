@@ -1,8 +1,13 @@
 import { useRoute } from 'vue-router';
 import { blogBackend } from './main.js';
 
+/**
+ * Fetch a single blog-post from the remote host in HTML markup / text format.
+ *
+ * @function getBlogPost
+ * @access {public}
+ */
 export async function getBlogPost() {
-  // Using 'route' to get the post that were requested in the URL field.
   const route = useRoute();
   const blogPostUrl = blogBackend.paths.posts + route.params.post;
 
@@ -19,6 +24,12 @@ export async function getBlogPost() {
   }
 }
 
+/**
+ * Fetch all blog-posts from the remote host in JSON format.
+ *
+ * @function getBlogPost
+ * @access {public}
+ */
 export async function getAllBlogPosts() {
   try {
     const response = await fetch(blogBackend.endpoints.allPosts);
