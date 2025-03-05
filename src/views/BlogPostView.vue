@@ -1,45 +1,15 @@
 <script setup>
 import { ref, onMounted, nextTick } from 'vue';
-import { useRoute } from 'vue-router';
-import { blogBackend, blogBackendHost, localUrl } from '../main.js';
+import { fixSrcHost } from '../helpers.js';
+import { getBlogPost } from '../api.js';
 
-const route = useRoute();
-const blogPostUrl = blogBackend.paths.posts + route.params.post;
-const blogPostFetchErrorMsg = "Failed to fetch post, blog server might be down.";
 const post = ref(null);
 
-/*
-* Fix external "local" asset rendered on the backend.
-* old tag: <img src="/img/img.png" />
-* new tag: <img src="https://[myBackendServer].com/img/img.png" />
-*/
-function fixImageHost() {
-  // Collect all images inside the '.wrapper' class.
-  const images = document.querySelectorAll(".wrapper img");
-
-  // Fix the URL for each image / item.
-  images.forEach(img => {
-    img.src = img.src.replace(localUrl, blogBackendHost);
-  });
-}
-
-const blogPost = async () => {
-  try {
-    const response = await fetch(blogPostUrl);
-    if (!response.ok) {
-      post.value = blogPostFetchErrorMsg;
-    } else {
-      post.value = await response.text();
-    }
-  } catch (error) {
-    console.error("Error:", error);
-  }
-
-  // Wait for the DOM to render the post before modifying the contents of <img>.
+onMounted(async () => {
+  post.value = await getBlogPost();
   await nextTick();
-  fixImageHost();
-}
-onMounted(() => { blogPost(); });
+  fixSrcHost(document.querySelectorAll(".wrapper img"));
+});
 </script>
 
 

@@ -1,25 +1,14 @@
 <script setup>
 import BlogPostPreviewComponent from "@/components/BlogPostPreviewComponent.vue"
 import { ref, onMounted } from 'vue';
-import { blogBackendHost, blogBackend } from '../main.js';
+import { blogBackendHost } from '@/main.js';
+import { getAllBlogPosts } from '@/api.js';
 
-const blogPostsEndpoint = blogBackend.endpoints.allPosts;
-const blogPostsFetchErrorMsg = "Failed to fetch posts, the blog server might be down.";
 const json = ref(null);
 
-const blogPosts = async () => {
-  try {
-    const response = await fetch(blogPostsEndpoint);
-    if (!response.ok) {
-      json.value = blogPostsFetchErrorMsg;
-    } else {
-      json.value = await response.json();
-    }
-  } catch (error) {
-    console.error("Error:", error);
-  }
-}
-onMounted(() => { blogPosts(); });
+onMounted(async () => {
+  json.value = await getAllBlogPosts();
+});
 </script>
 
 

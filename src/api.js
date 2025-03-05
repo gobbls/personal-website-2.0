@@ -1,16 +1,15 @@
-import { blogBackend } from '@/main.js';
 import { useRoute } from 'vue-router';
+import { blogBackend } from './main.js';
 
-export const blogPost = async () => {
-
+export async function getBlogPost() {
+  // Using 'route' to get the post that were requested in the URL field.
   const route = useRoute();
   const blogPostUrl = blogBackend.paths.posts + route.params.post;
-  const blogPostFetchErrorMsg = "Failed to fetch post, blog server might be down.";
 
   try {
     const response = await fetch(blogPostUrl);
     if (!response.ok) {
-      return blogPostFetchErrorMsg;
+      return "Failed to fetch post, blog server might be down.";
     } else {
       return await response.text();
     }
@@ -18,17 +17,13 @@ export const blogPost = async () => {
     console.error("Error:", error);
     return;
   }
-};
+}
 
-export const blogPosts = async () => {
-
-  const blogPostsEndpoint = blogBackend.endpoints.allPosts;
-  const blogPostsFetchErrorMsg = "Failed to fetch posts, the blog server might be down.";
-
+export async function getAllBlogPosts() {
   try {
-    const response = await fetch(blogPostsEndpoint);
+    const response = await fetch(blogBackend.endpoints.allPosts);
     if (!response.ok) {
-      return blogPostsFetchErrorMsg;
+      return "Failed to fetch posts, the blog server might be down.";
     } else {
       return await response.json();
     }
@@ -36,4 +31,4 @@ export const blogPosts = async () => {
     console.error("Error:", error);
     return;
   }
-};
+}
